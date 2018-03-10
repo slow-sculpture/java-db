@@ -22,7 +22,8 @@ public class ProductRepository {
         Session session = null;
         try {
             session = HibernateUtil.openSession();
-            session.save(product);
+            session.getTransaction().begin();
+            session.saveOrUpdate(product);
 
         } catch (Exception e) {
             e.printStackTrace();

@@ -64,5 +64,14 @@ public class App {
 
         ProductRepository.findAllByNameLike("merc")
                 .forEach(p-> System.out.println("find all by merc: "+p.getName()));
+
+        Optional<Product> toyOptional = ProductRepository.findOneById(3L);
+        if(toyOptional.isPresent()){
+            Product toy = toyOptional.get();
+            toy.getPrice().setGrossPrice(toy.getPrice().getGrossPrice().add(BigDecimal.ONE));
+            toy.getPrice().setNettoPrice(toy.getPrice().getNettoPrice().add(BigDecimal.ONE));
+
+            ProductRepository.saveProduct(toy);
+        }
     }
 }
