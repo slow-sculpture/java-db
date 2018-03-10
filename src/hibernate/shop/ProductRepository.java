@@ -5,6 +5,7 @@ import org.hibernate.Session;
 import org.hibernate.query.Query;
 
 
+import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -13,6 +14,7 @@ public class ProductRepository {
 
     /**
      * Saves product to DB
+     *
      * @param product
      */
     public static void saveProduct(Product product) {
@@ -35,6 +37,7 @@ public class ProductRepository {
 
     /**
      * Returns product from DB by id
+     *
      * @param id
      * @return Product or null
      */
@@ -57,6 +60,7 @@ public class ProductRepository {
 
     /**
      * Returns a list of all products
+     *
      * @return List<Product>
      */
     public static List<Product> findAll() {
@@ -80,6 +84,12 @@ public class ProductRepository {
 
     }
 
+    /**
+     * Returns a list of all products by given product types
+     *
+     * @param productType
+     * @return List<Product>
+     */
     public static List<Product> findAllByProductType(ProductType productType) {
 
         Session session = null;
@@ -102,6 +112,12 @@ public class ProductRepository {
 
     }
 
+    /**
+     * Returns an amount of products by given product type
+     *
+     * @param productType
+     * @return Long amountOfProducts
+     */
     public static Long countByProductType(ProductType productType) {
 
         Session session = null;
@@ -115,6 +131,28 @@ public class ProductRepository {
         } catch (Exception e) {
             e.printStackTrace();
             return 0L;
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+
+
+    }
+
+    public static List<Product> findAllWithPriceLess(BigDecimal priceGross) {
+
+        Session session = null;
+        try {
+            session = HibernateUtil.openSession();
+            String jpql = "SELECT p FROM Product p WHERE p.price.grossPrice < :price" ;
+            Query query = session.createQuery(jpql);
+            query.setParameter("price", priceGross);
+            return query.getResultList();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Collections.emptyList();
         } finally {
             if (session != null && session.isOpen()) {
                 session.close();

@@ -54,7 +54,7 @@
             <entry file="file://$PROJECT_DIR$/src/hibernate/App.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="622">
-                  <caret line="59" column="52" lean-forward="false" selection-start-line="59" selection-start-column="52" selection-end-line="59" selection-end-column="52" />
+                  <caret line="62" column="87" lean-forward="false" selection-start-line="62" selection-start-column="87" selection-end-line="62" selection-end-column="87" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -70,7 +70,7 @@
             <entry file="file://$PROJECT_DIR$/src/hibernate/shop/ProductRepository.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="457">
-                  <caret line="115" column="32" lean-forward="true" selection-start-line="115" selection-start-column="32" selection-end-line="115" selection-end-column="32" />
+                  <caret line="149" column="52" lean-forward="false" selection-start-line="149" selection-start-column="52" selection-end-line="149" selection-end-column="52" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -107,8 +107,8 @@
         <option value="$PROJECT_DIR$/src/hibernate/shop/Product.java" />
         <option value="$PROJECT_DIR$/src/hibernate/shop/Price.java" />
         <option value="$PROJECT_DIR$/src/hibernate.cfg.xml" />
-        <option value="$PROJECT_DIR$/src/hibernate/App.java" />
         <option value="$PROJECT_DIR$/src/hibernate/shop/ProductRepository.java" />
+        <option value="$PROJECT_DIR$/src/hibernate/App.java" />
       </list>
     </option>
   </component>
@@ -618,7 +618,14 @@
       <option name="project" value="LOCAL" />
       <updated>1520684318482</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="ProductRepository - returns an amount of products by given product type">
+      <created>1520684489644</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1520684489644</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -787,20 +794,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hibernate/App.java">
+    <entry file="file://$PROJECT_DIR$/src/hibernate/shop/ProductRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="622">
-          <caret line="59" column="52" lean-forward="false" selection-start-line="59" selection-start-column="52" selection-end-line="59" selection-end-column="52" />
+        <state relative-caret-position="457">
+          <caret line="149" column="52" lean-forward="false" selection-start-line="149" selection-start-column="52" selection-end-line="149" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hibernate/shop/ProductRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/hibernate/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="115" column="32" lean-forward="true" selection-start-line="115" selection-start-column="32" selection-end-line="115" selection-end-column="32" />
+        <state relative-caret-position="622">
+          <caret line="62" column="87" lean-forward="false" selection-start-line="62" selection-start-column="87" selection-end-line="62" selection-end-column="87" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

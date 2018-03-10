@@ -58,5 +58,8 @@ public class App {
 
         Long carCount = ProductRepository.countByProductType(ProductType.CAR);
         System.out.println("cars in db " +carCount);
+
+        ProductRepository.findAllWithPriceLess(new BigDecimal(50))
+                .forEach(p-> System.out.println("product with price less: "+p.getName()));
     }
 }
