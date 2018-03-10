@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Set;
 
 @Entity
 @Table (name="orders")
@@ -24,6 +25,8 @@ public class Order implements Serializable{
     BigDecimal totalNetto;
     BigDecimal totalGross;
     String userEmail;
+
+    Set<OrderDetail> orderDetailList;
 
     public Order(BigDecimal totalGross, String userEmail) {
         this.totalGross = totalGross;
