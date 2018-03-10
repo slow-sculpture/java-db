@@ -101,4 +101,26 @@ public class ProductRepository {
 
 
     }
+
+    public static Long countByProductType(ProductType productType) {
+
+        Session session = null;
+        try {
+            session = HibernateUtil.openSession();
+            String jpql = "SELECT p FROM Product p WHERE p.productType= :productType";
+            Query query = session.createQuery(jpql);
+            query.setParameter("productType", productType);
+            return (Long) query.getSingleResult();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0L;
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+
+
+    }
 }
