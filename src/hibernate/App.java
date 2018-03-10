@@ -1,11 +1,7 @@
 package hibernate;
 
 
-import hibernate.shop.Price;
-import hibernate.shop.Product;
-import hibernate.shop.ProductRepository;
-import hibernate.shop.ProductType;
-
+import hibernate.shop.*;
 
 
 import java.math.BigDecimal;
@@ -75,5 +71,13 @@ public class App {
         }
 
         ProductRepository.delete(2L);
+
+       Order order = Order.builder()
+               .userEmail("test@sda.pl")
+               .totalGross(new BigDecimal(12))
+               .totalNetto(new BigDecimal(10))
+               .build();
+
+
     }
 }
