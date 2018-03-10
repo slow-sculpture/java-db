@@ -24,9 +24,13 @@ public class ProductRepository {
             session = HibernateUtil.openSession();
             session.getTransaction().begin();
             session.saveOrUpdate(product);
+            session.getTransaction().commit();
 
         } catch (Exception e) {
             e.printStackTrace();
+            if(session.getTransaction().isActive()){
+                session.getTransaction().rollback();
+            }
         } finally {
             if (session != null && session.isOpen()) {
                 session.close();
