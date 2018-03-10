@@ -1,10 +1,21 @@
 package hibernate.shop;
 
-        import java.math.BigDecimal;
+import javax.persistence.Embeddable;
+import java.math.BigDecimal;
 
+//typ zagniezdzony
+@Embeddable
 public class Price {
     BigDecimal nettoPrice;
     BigDecimal grossPrice;
+
+    public Price() {
+    }
+
+    public Price(BigDecimal nettoPrice, BigDecimal grossPrice) {
+        this.nettoPrice = nettoPrice;
+        this.grossPrice = grossPrice;
+    }
 
     public BigDecimal getNettoPrice() {
         return nettoPrice;
