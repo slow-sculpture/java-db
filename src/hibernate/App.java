@@ -21,9 +21,13 @@ public class App {
         Product mercA = new Product("Mercedes A", ProductType.CAR,
                 new Price(new BigDecimal(10000), new BigDecimal(20000)));
 
+        Product smallCar = new Product("Red car", ProductType.TOY,
+                new Price(new BigDecimal(30), new BigDecimal(45)));
+
 
         ProductRepository.saveProduct(mercS);
         ProductRepository.saveProduct(mercA);
+        ProductRepository.saveProduct(smallCar);
 
         Optional<Product> product1 = ProductRepository.findOneById(1L);
         Optional<Product> product2 = ProductRepository.findOneById(2L);
@@ -45,5 +49,11 @@ public class App {
 
 
         ProductRepository.findAll().forEach(p-> System.out.println("findAll()"+p.getName()));
+
+        ProductRepository.findAllByProductType(ProductType.CAR)
+                .forEach(p-> System.out.println("type car: "+p.getName()));
+
+        ProductRepository.findAllByProductType(ProductType.TOY)
+                .forEach(p-> System.out.println("type toy: "+p.getName()));
     }
 }
