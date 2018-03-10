@@ -43,5 +43,7 @@ public class App {
         System.out.println(product2.map(p->p.getName()).orElse(("")));
         System.out.println(product3.map(p->p.getName()).orElse(("")));
 
+
+        ProductRepository.findAll().forEach(p-> System.out.println("findAll()"+p.getName()));
     }
 }
