@@ -78,6 +78,8 @@ public class App {
                .totalNetto(new BigDecimal(10))
                .build();
 
+       OrderRepository.saveOrder(order);
+
 
     }
 }
