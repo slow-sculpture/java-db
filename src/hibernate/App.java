@@ -55,5 +55,8 @@ public class App {
 
         ProductRepository.findAllByProductType(ProductType.TOY)
                 .forEach(p-> System.out.println("type toy: "+p.getName()));
+
+        Long carCount = ProductRepository.countByProductType(ProductType.CAR);
+        System.out.println("cars in db " +carCount);
     }
 }

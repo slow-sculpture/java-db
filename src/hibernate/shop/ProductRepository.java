@@ -107,7 +107,7 @@ public class ProductRepository {
         Session session = null;
         try {
             session = HibernateUtil.openSession();
-            String jpql = "SELECT p FROM Product p WHERE p.productType= :productType";
+            String jpql = "SELECT count(p.id) FROM Product p WHERE p.productType= :productType";
             Query query = session.createQuery(jpql);
             query.setParameter("productType", productType);
             return (Long) query.getSingleResult();
