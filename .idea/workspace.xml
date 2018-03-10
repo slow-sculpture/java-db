@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c86f16b-3ece-4eeb-84f7-f3a2663167b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hibernate/shop/ProductRepository.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/src/hibernate.cfg.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate/App.java" afterPath="$PROJECT_DIR$/src/hibernate/App.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate/shop/Price.java" afterPath="$PROJECT_DIR$/src/hibernate/shop/Price.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate/shop/Product.java" afterPath="$PROJECT_DIR$/src/hibernate/shop/Product.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate/shop/ProductRepository.java" afterPath="$PROJECT_DIR$/src/hibernate/shop/ProductRepository.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="App.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/hibernate/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="33" lean-forward="false" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+            <state relative-caret-position="30">
+              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -63,12 +60,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductRepository.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProductRepository.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hibernate/shop/ProductRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
-              <folding />
+            <state relative-caret-position="210">
+              <caret line="14" column="31" lean-forward="true" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -100,8 +99,8 @@
         <option value="$PROJECT_DIR$/src/hibernate/shop/Product.java" />
         <option value="$PROJECT_DIR$/src/hibernate/shop/Price.java" />
         <option value="$PROJECT_DIR$/src/hibernate.cfg.xml" />
-        <option value="$PROJECT_DIR$/src/hibernate/App.java" />
         <option value="$PROJECT_DIR$/src/hibernate/shop/ProductRepository.java" />
+        <option value="$PROJECT_DIR$/src/hibernate/App.java" />
       </list>
     </option>
   </component>
@@ -569,7 +568,14 @@
       <option name="project" value="LOCAL" />
       <updated>1520675332421</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="adding Product data to MySQL db">
+      <created>1520678420407</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1520678420407</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -623,7 +629,8 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="encja Product" />
     <MESSAGE value="klasa Price &amp; enum ProductType" />
-    <option name="LAST_COMMIT_MESSAGE" value="klasa Price &amp; enum ProductType" />
+    <MESSAGE value="adding Product data to MySQL db" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding Product data to MySQL db" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -732,21 +739,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hibernate/App.java">
+    <entry file="file://$PROJECT_DIR$/src/hibernate/shop/ProductRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="33" lean-forward="false" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+        <state relative-caret-position="210">
+          <caret line="14" column="31" lean-forward="true" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hibernate/shop/ProductRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/hibernate/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
-          <folding />
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
