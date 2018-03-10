@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6c86f16b-3ece-4eeb-84f7-f3a2663167b1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate/App.java" afterPath="$PROJECT_DIR$/src/hibernate/App.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate/shop/Price.java" afterPath="$PROJECT_DIR$/src/hibernate/shop/Price.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate/shop/ProductRepository.java" afterPath="$PROJECT_DIR$/src/hibernate/shop/ProductRepository.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -635,7 +632,14 @@
       <option name="project" value="LOCAL" />
       <updated>1520684984985</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="ProductRepository - returns all products by given name">
+      <created>1520685847057</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1520685847057</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -696,7 +700,8 @@
     <MESSAGE value="ProductRepository - returns a list of products by given product type" />
     <MESSAGE value="ProductRepository - returns an amount of products by given product type" />
     <MESSAGE value="ProductRepository - returns all products of price less then given" />
-    <option name="LAST_COMMIT_MESSAGE" value="ProductRepository - returns all products of price less then given" />
+    <MESSAGE value="ProductRepository - returns all products by given name" />
+    <option name="LAST_COMMIT_MESSAGE" value="ProductRepository - returns all products by given name" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
