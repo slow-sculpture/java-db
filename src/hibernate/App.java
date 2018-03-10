@@ -60,6 +60,9 @@ public class App {
         System.out.println("cars in db " +carCount);
 
         ProductRepository.findAllWithPriceLess(new BigDecimal(50))
-                .forEach(p-> System.out.println("product with price less: "+p.getName()));
+                .forEach(p-> System.out.println("product with price less: "+p.getName()+" "+p.getPrice().getVatPrice()));
+
+        ProductRepository.findAllByNameLike("merc")
+                .forEach(p-> System.out.println("find all by merc: "+p.getName()));
     }
 }

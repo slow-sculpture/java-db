@@ -140,6 +140,11 @@ public class ProductRepository {
 
     }
 
+    /**
+     * Returns a list of products with price less then given
+     * @param priceGross
+     * @return List<Product>
+     */
     public static List<Product> findAllWithPriceLess(BigDecimal priceGross) {
 
         Session session = null;
@@ -148,6 +153,33 @@ public class ProductRepository {
             String jpql = "SELECT p FROM Product p WHERE p.price.grossPrice < :price" ;
             Query query = session.createQuery(jpql);
             query.setParameter("price", priceGross);
+            return query.getResultList();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Collections.emptyList();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+
+
+    }
+
+    /**
+     * Returns a list of all products by given name (upper/lower case or part of a name ->  doesn't matter)
+     * @param name
+     * @return List<Product>
+     */
+    public static List<Product> findAllByNameLike(String name) {
+
+        Session session = null;
+        try {
+            session = HibernateUtil.openSession();
+            String jpql = "SELECT p FROM Product p WHERE UPPER(p.name) like :name";
+            Query query = session.createQuery(jpql);
+            query.setParameter("name","%"+ name.toUpperCase()+"%");
             return query.getResultList();
 
         } catch (Exception e) {

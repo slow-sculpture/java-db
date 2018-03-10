@@ -1,6 +1,7 @@
 package hibernate.shop;
 
 import javax.persistence.Embeddable;
+import javax.persistence.Transient;
 import java.math.BigDecimal;
 
 //typ zagniezdzony
@@ -8,6 +9,9 @@ import java.math.BigDecimal;
 public class Price {
     BigDecimal nettoPrice;
     BigDecimal grossPrice;
+
+    @Transient
+    BigDecimal vatPrice;
 
     public Price() {
     }
@@ -32,6 +36,12 @@ public class Price {
     public void setGrossPrice(BigDecimal grossPrice) {
         this.grossPrice = grossPrice;
     }
+
+    public BigDecimal getVatPrice() {
+        return grossPrice.subtract(nettoPrice);
+    }
+
+
 }
 
 // tworzy instancje z bezargumentowego konstruktora i wypelnia pola 0 lub null
