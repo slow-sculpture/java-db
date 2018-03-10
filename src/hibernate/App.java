@@ -73,5 +73,7 @@ public class App {
 
             ProductRepository.saveProduct(toy);
         }
+
+        ProductRepository.delete(2L);
     }
 }

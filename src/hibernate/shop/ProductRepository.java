@@ -41,6 +41,36 @@ public class ProductRepository {
     }
 
     /**
+     * Removes product from DB by given id
+     * @param id
+     */
+    public static void delete(Long id) {
+
+        Session session = null;
+        try {
+            session = HibernateUtil.openSession();
+            session.getTransaction().begin();
+            Optional<Product> oneById = findOneById(id);
+            if(oneById.isPresent()){
+                session.delete(oneById.get());
+            }
+            session.getTransaction().commit();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            if(session.getTransaction().isActive()){
+                session.getTransaction().rollback();
+            }
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+
+
+    }
+
+    /**
      * Returns product from DB by id
      *
      * @param id
