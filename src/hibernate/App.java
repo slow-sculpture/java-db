@@ -5,6 +5,7 @@ import hibernate.shop.*;
 
 
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.Optional;
 
 
@@ -80,6 +81,12 @@ public class App {
 
        OrderRepository.saveOrder(order);
 
+        List<Order> all = OrderRepository.findAll();
+
+        System.out.println("d");
+
+        ProductRepository.findAllNative()
+                .forEach(p-> System.out.println("find all from native: "+p.getName()));
 
     }
 }

@@ -25,5 +25,8 @@ public class Order implements Serializable{
     BigDecimal totalGross;
     String userEmail;
 
-
+    public Order(BigDecimal totalGross, String userEmail) {
+        this.totalGross = totalGross;
+        this.userEmail = userEmail;
+    }
 }
