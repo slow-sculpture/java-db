@@ -293,4 +293,38 @@ public class ProductRepository {
 
     }
 
+    /**
+     * Returns all cars or toys with price less then given
+     * @param priceGross
+     * @return
+     */
+    public static List<Product> findAllCarOrToyWithPriceLessThen(BigDecimal priceGross) {
+
+        Session session = null;
+        try {
+            session = HibernateUtil.openSession();
+            String jpql = "SELECT p FROM product p WHERE (p.productType = :toy OR " +
+                    "p.productType = :car) AND p.price.grossPrice < :price";
+            Query query = session.createQuery(jpql);
+            query.setParameter("price", priceGross);
+            query.setParameter("toy", ProductType.TOY);
+            query.setParameter("car", ProductType.CAR);
+            query.setMaxResults(30);
+            query.setFirstResult(0);
+            return query.getResultList();
+
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Collections.emptyList();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+
+
+    }
+
 }
