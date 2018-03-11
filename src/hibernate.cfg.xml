@@ -17,6 +17,7 @@
         <mapping class="hibernate.shop.Order"/>
         <mapping class="hibernate.shop.OrderDetail"/>
         <mapping class="hibernate.shop.OrderHistory"/>
+        <mapping class="hibernate.shop.OrderComplaint"/>
 
     </session-factory>
 </hibernate-configuration>
