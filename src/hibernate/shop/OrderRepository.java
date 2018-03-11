@@ -57,8 +57,8 @@ public class OrderRepository {
         Session session = null;
         try{
             session=HibernateUtil.openSession();
-            String jpql="SELECT o FROM Order o LEFT JOIN o.orderDetailSet od WHERE od.product.id = :id";
-            String jpql2 = "SELECT o FROM OrderDetail od LEFT JOIN od.order o WHERE od.product.id = :id";
+            String jpql="SELECT o FROM Order o LEFT JOIN FETCH o.orderDetailSet od WHERE od.product.id = :id";
+            //String jpql2 = "SELECT o FROM OrderDetail od LEFT JOIN od.order o WHERE od.product.id = :id";
             Query query = session.createQuery(jpql);
             query.setParameter("id",productId);
             return query.getResultList();
