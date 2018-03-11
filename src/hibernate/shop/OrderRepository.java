@@ -4,6 +4,7 @@ import hibernate.hibernate.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
+import javax.persistence.Column;
 import java.util.Collections;
 import java.util.List;
 
@@ -50,5 +51,24 @@ public class OrderRepository {
         }
 
 
+    }
+
+    public static List<Order> findAllOrderWithProduct(Long productId){
+        Session session = null;
+        try{
+            session=HibernateUtil.openSession();
+            String jpql="SELECT o FROM Order o LEFT JOIN o.orderDetailSet od WHERE od.product.id = :id";
+            String jpql2 = "SELECT o FROM OrderDetail od LEFT JOIN od.order o WHERE od.product.id = :id";
+            Query query = session.createQuery(jpql);
+            query.setParameter("id",productId);
+            return query.getResultList();
+        } catch (Exception e){
+            e.printStackTrace();
+            return Collections.emptyList();
+        }finally {
+            if(session!=null && session.isOpen()){
+                session.close();
+            }
+        }
     }
 }

@@ -82,6 +82,18 @@ public class App {
                 .price(product1.get().getPrice())
                 .build();
 
+        OrderDetail orderDetail2 = OrderDetail.builder()
+                .amount(BigDecimal.TEN)
+                .product(product3.get())
+                .price(product3.get().getPrice())
+                .build();
+
+        OrderDetail orderDetail3 = OrderDetail.builder()
+                .amount(BigDecimal.TEN)
+                .product(product1.get())
+                .price(product1.get().getPrice())
+                .build();
+
 
        //zamowienie
         Order order = Order.builder()
@@ -94,6 +106,8 @@ public class App {
 
         //dodaje pozycje zamowienia do zamowienia
         order.addOrderDetail(orderDetail);
+        order.addOrderDetail(orderDetail2);
+        order.addOrderDetail(orderDetail3);
 
        //zapis zamowienia
        OrderRepository.saveOrder(order);
@@ -104,6 +118,19 @@ public class App {
 
         ProductRepository.findAllNative()
                 .forEach(p-> System.out.println("find all from native: "+p.getName()));
+
+        OrderRepository.findAllOrderWithProduct(1L)
+                .forEach(p-> System.out.println("find order with product: "+order.getId()));
+
+        List<Order> allOrderWithProduct = OrderRepository.findAllOrderWithProduct(1L);
+
+        for(Order o : allOrderWithProduct){
+            o.getOrderDetailSet().stream().forEach(od ->
+                    System.out.println("zamowienie o id "+o.getId()+" "+od.getProduct().getName()));
+        }
+        //powyzsze wyrzuca blad bo listy i sety nie sa pobierane automatycznie zeby nie obciazac DB -> LAZY
+        //mozna albo ustawic FetchType.EAGER (dodane po // w Order)
+        //albo zrobic specjalne zapytanie SQL
 
 
 

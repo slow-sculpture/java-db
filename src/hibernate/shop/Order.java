@@ -25,7 +25,7 @@ public class Order implements Serializable{
     String userEmail;
 
 
-    @OneToMany (mappedBy = "order", cascade = CascadeType.ALL)
+    @OneToMany (mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.LAZY)//EAGER - lazy jest domyslnie
             //jedno zamowienie moze miec wiecej pozycji
             // wlascicielem realacji bedzie order detail
     Set<OrderDetail> orderDetailSet;
