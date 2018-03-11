@@ -33,6 +33,17 @@ public class Order implements Serializable{
     @OneToOne (mappedBy = "order")
     OrderHistory orderHistory;
 
+    @ManyToMany (cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    //join table do laczenia przez tabele dodatkowa
+    @JoinTable(
+            //joinColumns nazwa kolumny w tabeli dodatkowej z kluczem do tabeli laczonej
+            // + nazwa pola w encji z kluczem po ktorym laczymy
+            joinColumns = @JoinColumn(name = "order_complaint_id", referencedColumnName = "id"),
+            //nazwa kolumny z kluczem glownym z encji Order
+            inverseJoinColumns = @JoinColumn(name = "order_id")
+    )
+    Set<OrderComplaint> optionSet;
+
     public Order(BigDecimal totalGross, String userEmail) {
         this.totalGross = totalGross;
         this.userEmail = userEmail;

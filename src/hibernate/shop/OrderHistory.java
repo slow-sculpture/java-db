@@ -17,6 +17,7 @@ import java.time.LocalDate;
 @Builder
 public class OrderHistory implements Serializable {
     @Id
+    //poniezsze ustawia autoinkrementacje klucza glownego
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
