@@ -130,7 +130,7 @@ public class App {
         }
         //powyzsze wyrzuca blad bo listy i sety nie sa pobierane automatycznie zeby nie obciazac DB -> LAZY
         //mozna albo ustawic FetchType.EAGER (dodane po // w Order)
-        //albo zrobic specjalne zapytanie SQL: LEFT JOIN FETCH
+        //albo zrobic specjalne zapytanie SQL: LEFT JOIN FETCH (dodane w OrderRepository.findAllOrderWithProduct
 
 
 
