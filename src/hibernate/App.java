@@ -79,6 +79,13 @@ public class App {
                .totalNetto(new BigDecimal(10))
                .build();
 
+       OrderDetail build = OrderDetail.builder()
+               .amount(BigDecimal.ONE)
+               .order(order)
+               .product(product1.get())
+               .price(product1.get().getPrice())
+               .build();
+
        OrderRepository.saveOrder(order);
 
         List<Order> all = OrderRepository.findAll();
@@ -87,6 +94,8 @@ public class App {
 
         ProductRepository.findAllNative()
                 .forEach(p-> System.out.println("find all from native: "+p.getName()));
+
+
 
     }
 }

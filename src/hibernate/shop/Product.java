@@ -2,6 +2,7 @@ package hibernate.shop;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Set;
 import javax.persistence.*;
 
 
@@ -22,6 +23,10 @@ public class Product implements Serializable {
 
     @Embedded
     private Price price;
+
+    //jeden produkt moze byc na wielu pozycjach zamowienia
+    @OneToMany (mappedBy = "product")
+    Set<OrderDetail> orderDetailSet;
 
     //bezargumentowy konstruktor dla hibernate
     public Product(){

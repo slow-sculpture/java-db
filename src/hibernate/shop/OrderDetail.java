@@ -14,15 +14,19 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Builder
 @Data
-public class OrderDetail implements Serializable{
+public class OrderDetail implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     @Embedded
     Price price;
     BigDecimal amount;
-    //TODO add relation
+
+    @ManyToOne
+    @JoinColumn
     Product product;
-    //TODO add relation
+
+    @ManyToOne
+    @JoinColumn
     Order order;
 }

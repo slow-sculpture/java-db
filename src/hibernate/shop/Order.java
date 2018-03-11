@@ -26,7 +26,11 @@ public class Order implements Serializable{
     BigDecimal totalGross;
     String userEmail;
 
-    Set<OrderDetail> orderDetailList;
+
+    @OneToMany (mappedBy = "order")
+            //jedno zamowienie moze miec wiecej pozycji
+            // wlascicielem realacji bedzie order detail
+    Set<OrderDetail> orderDetailSet;
 
     public Order(BigDecimal totalGross, String userEmail) {
         this.totalGross = totalGross;

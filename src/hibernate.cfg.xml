@@ -15,6 +15,7 @@
 
         <mapping class="hibernate.shop.Product"/>
         <mapping class="hibernate.shop.Order"/>
+        <mapping class="hibernate.shop.OrderDetail"/>
 
     </session-factory>
 </hibernate-configuration>
