@@ -30,6 +30,9 @@ public class Order implements Serializable{
             // wlascicielem realacji bedzie order detail
     Set<OrderDetail> orderDetailSet;
 
+    @OneToOne
+    OrderHistory orderHistory;
+
     public Order(BigDecimal totalGross, String userEmail) {
         this.totalGross = totalGross;
         this.userEmail = userEmail;

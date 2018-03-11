@@ -8,7 +8,6 @@ import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 
 public class App {
@@ -47,7 +46,7 @@ public class App {
         System.out.println(product3.map(p->p.getName()).orElse(("")));
 
 
-        ProductRepository.findAll().forEach(p-> System.out.println("findAll()"+p.getName()));
+        ProductRepository.findAll().forEach(p-> System.out.println("findAllDTO()"+p.getName()));
 
         ProductRepository.findAllByProductType(ProductType.CAR)
                 .forEach(p-> System.out.println("type car: "+p.getName()));
@@ -112,7 +111,7 @@ public class App {
        //zapis zamowienia
        OrderRepository.saveOrder(order);
 
-        List<Order> all = OrderRepository.findAll();
+        List<Order> all = OrderRepository.findAllDTO();
 
         System.out.println("d");
 
@@ -132,7 +131,13 @@ public class App {
         //mozna albo ustawic FetchType.EAGER (dodane po // w Order)
         //albo zrobic specjalne zapytanie SQL: LEFT JOIN FETCH (dodane w OrderRepository.findAllOrderWithProduct
 
+        System.out.println();
+        List<Order> allOrder = OrderRepository.findAll();
 
+        for(Order o : allOrder){
+            o.getOrderDetailSet().stream().forEach(od ->
+                    System.out.println("zamowienie o id "+o.getId()+" "+od.getProduct().getName()));
+        }
 
     }
 }

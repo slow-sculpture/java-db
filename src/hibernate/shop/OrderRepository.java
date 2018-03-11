@@ -32,7 +32,7 @@ public class OrderRepository {
 
 
     }
-    public static List<Order> findAll() {
+    public static List<Order> findAllDTO() {
 
         Session session = null;
         try {
@@ -55,7 +55,7 @@ public class OrderRepository {
 
     public static List<Order> findAllOrderWithProduct(Long productId){
         Session session = null;
-        try{
+            try{
             session=HibernateUtil.openSession();
             String jpql="SELECT o FROM Order o LEFT JOIN FETCH o.orderDetailSet od WHERE od.product.id = :id";
             //String jpql2 = "SELECT o FROM OrderDetail od LEFT JOIN od.order o WHERE od.product.id = :id";
@@ -71,4 +71,22 @@ public class OrderRepository {
             }
         }
     }
+
+    public static List<Order> findAll() {
+
+        Session session = null;
+        try {
+            session = HibernateUtil.openSession();
+            String jpql="SELECT o FROM Order o LEFT JOIN FETCH o.orderDetailSet od";
+            Query query = session.createQuery(jpql);
+            return query.getResultList();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Collections.emptyList();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }}
 }
