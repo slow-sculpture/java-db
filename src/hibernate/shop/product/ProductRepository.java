@@ -243,11 +243,15 @@ public class ProductRepository {
     public static List<Product> findAllByNameLikeWithCriteria(String name){
         Session session = null;
         try {
+            //otwieramy sesje
             session = HibernateUtil.openSession();
+            //tworzym CriteriaBuilder
             CriteriaBuilder cb = session.getCriteriaBuilder();
             CriteriaQuery<Product> query = cb.createQuery(Product.class);
+            //definiujemy z jakiej encji pobieramy -> FROM
             Root<Product> from = query.from(Product.class);
             query.select(from);
+            //predykaty, czyli warunki WHERE
             Predicate whereNameLike = cb.like(
                     from.get("name"), "%" + name.toUpperCase() + "%");
             CriteriaQuery<Product> criteriaQuery = query.where(whereNameLike);
@@ -273,7 +277,7 @@ public class ProductRepository {
         Session session = null;
         try {
             session = HibernateUtil.openSession();
-            String sql = "SELECT * FROM product AS p";
+            String sql = "SELECT * FROM product";
             Query query = session.createNativeQuery(sql, Product.class);
             return query.getResultList();
 
