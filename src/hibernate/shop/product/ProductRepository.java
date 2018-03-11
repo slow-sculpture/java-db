@@ -5,6 +5,10 @@ import org.hibernate.Session;
 import org.hibernate.query.Query;
 
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.List;
@@ -227,6 +231,37 @@ public class ProductRepository {
         }
 
 
+    }
+
+    /**
+     * Returns a list of all products by given name (upper/lower case or part of a name ->  doesn't matter)
+     * using given criterias
+     * Method is equal above method findAllByNamesLike
+     * @param
+     * @return List<product>
+     */
+    public static List<Product> findAllByNameLikeWithCriteria(String name){
+        Session session = null;
+        try {
+            session = HibernateUtil.openSession();
+            CriteriaBuilder cb = session.getCriteriaBuilder();
+            CriteriaQuery<Product> query = cb.createQuery(Product.class);
+            Root<Product> from = query.from(Product.class);
+            query.select(from);
+            Predicate whereNameLike = cb.like(
+                    from.get("name"), "%" + name.toUpperCase() + "%");
+            CriteriaQuery<Product> criteriaQuery = query.where(whereNameLike);
+
+            return session.createQuery(criteriaQuery).getResultList();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Collections.emptyList();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
     }
 
     /**

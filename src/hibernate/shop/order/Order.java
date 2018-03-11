@@ -15,7 +15,7 @@ import java.util.Set;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(exclude = "orderDetailSet")
+@EqualsAndHashCode(exclude = {"orderDetailSet", "orderComplaintSet"})
 public class Order implements Serializable{
 
     @Id

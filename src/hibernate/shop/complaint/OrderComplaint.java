@@ -25,6 +25,6 @@ public class OrderComplaint implements Serializable {
     @Enumerated (value = EnumType.STRING)
     ComplaintStatus complaintStatus;
 
-    @ManyToMany (mappedBy = "orderComplaintSet")
+    @ManyToMany (mappedBy = "orderComplaintSet", cascade = CascadeType.ALL)
     Set<Order> orderSet;
 }
