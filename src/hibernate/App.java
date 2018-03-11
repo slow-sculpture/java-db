@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 
 public class App {
@@ -138,6 +139,15 @@ public class App {
             o.getOrderDetailSet().stream().forEach(od ->
                     System.out.println("zamowienie o id "+o.getId()+" "+od.getProduct().getName()));
         }
+
+        Set<Order> orderSet = new HashSet<>();
+        orderSet.add(order);
+
+        OrderComplaint orderComplaint = OrderComplaint.builder()
+                .complaintStatus(ComplaintStatus.PENDING)
+                .message("New complaint from John")
+                .orderSet(orderSet)
+                .build();
 
     }
 }

@@ -1,6 +1,8 @@
 package hibernate.shop;
 
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,6 +13,8 @@ import java.util.Set;
 @Entity
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class OrderComplaint implements Serializable {
 
     @Id
@@ -22,6 +26,6 @@ public class OrderComplaint implements Serializable {
     @Enumerated (value = EnumType.STRING)
     ComplaintStatus complaintStatus;
 
-    @ManyToMany
+    @ManyToMany (mappedBy = "orderComplaintSet")
     Set<Order> orderSet;
 }
