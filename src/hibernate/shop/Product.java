@@ -1,5 +1,7 @@
 package hibernate.shop;
 
+import lombok.EqualsAndHashCode;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Set;
@@ -7,6 +9,7 @@ import javax.persistence.*;
 
 
 @Entity
+@EqualsAndHashCode(exclude = "orderDetailSet")
 //jakbysmy chcieli zmienic nazwe tabeli
 //@Table("product")
 public class Product implements Serializable {

@@ -22,11 +22,11 @@ public class OrderDetail implements Serializable {
     Price price;
     BigDecimal amount;
 
-    @ManyToOne
+    @ManyToOne (cascade = CascadeType.ALL)
     @JoinColumn
     Product product;
 
-    @ManyToOne
+    @ManyToOne (cascade = CascadeType.ALL)
     @JoinColumn
     Order order;
 }

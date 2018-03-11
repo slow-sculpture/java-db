@@ -1,10 +1,7 @@
 package hibernate.shop;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -17,6 +14,7 @@ import java.util.Set;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(exclude = "orderDetailSet")
 public class Order implements Serializable{
 
     @Id
@@ -27,7 +25,7 @@ public class Order implements Serializable{
     String userEmail;
 
 
-    @OneToMany (mappedBy = "order")
+    @OneToMany (mappedBy = "order", cascade = CascadeType.ALL)
             //jedno zamowienie moze miec wiecej pozycji
             // wlascicielem realacji bedzie order detail
     Set<OrderDetail> orderDetailSet;
@@ -35,5 +33,10 @@ public class Order implements Serializable{
     public Order(BigDecimal totalGross, String userEmail) {
         this.totalGross = totalGross;
         this.userEmail = userEmail;
+    }
+
+    public void addOrderDetail(OrderDetail orderDetail){
+        orderDetail.setOrder(this);
+        orderDetailSet.add(orderDetail);
     }
 }

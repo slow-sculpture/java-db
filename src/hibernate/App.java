@@ -5,8 +5,10 @@ import hibernate.shop.*;
 
 
 import java.math.BigDecimal;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 
 public class App {
@@ -73,19 +75,27 @@ public class App {
 
         ProductRepository.delete(2L);
 
-       Order order = Order.builder()
+        //pozycja zamowienia
+        OrderDetail orderDetail = OrderDetail.builder()
+                .amount(BigDecimal.ONE)
+                .product(product1.get())
+                .price(product1.get().getPrice())
+                .build();
+
+
+       //zamowienie
+        Order order = Order.builder()
                .userEmail("test@sda.pl")
                .totalGross(new BigDecimal(12))
                .totalNetto(new BigDecimal(10))
+                //dodajemy seta do zamowienia
+                .orderDetailSet(new HashSet<>())
                .build();
 
-       OrderDetail build = OrderDetail.builder()
-               .amount(BigDecimal.ONE)
-               .order(order)
-               .product(product1.get())
-               .price(product1.get().getPrice())
-               .build();
+        //dodaje pozycje zamowienia do zamowienia
+        order.addOrderDetail(orderDetail);
 
+       //zapis zamowienia
        OrderRepository.saveOrder(order);
 
         List<Order> all = OrderRepository.findAll();
