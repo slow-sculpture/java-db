@@ -3,6 +3,7 @@ package hibernate;
 
 import hibernate.shop.complaint.ComplaintStatus;
 import hibernate.shop.complaint.OrderComplaint;
+import hibernate.shop.complaint.OrderComplaintRepository;
 import hibernate.shop.order.Order;
 import hibernate.shop.order.OrderDetail;
 import hibernate.shop.order.OrderRepository;
@@ -156,6 +157,11 @@ public class App {
                 .message("New complaint from John")
                 .orderSet(orderSet)
                 .build();
+
+        OrderComplaintRepository.saveOrderComplaint(orderComplaint);
+
+        ProductRepository.findAllByNameLikeWithCriteria("merc")
+                .forEach(p-> System.out.println("find all by merc: "+p.getName()));
 
 
 
