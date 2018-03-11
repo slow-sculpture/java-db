@@ -327,4 +327,32 @@ public class ProductRepository {
 
     }
 
+    //===================== same using criteria builder ==========================\\
+    public static List<Product> findAllCarOrToyWithPriceLessThenWithCriteria(BigDecimal priceGrosse){
+        Session session = null;
+        try {
+            session = HibernateUtil.openSession();
+            CriteriaBuilder cb = session.getCriteriaBuilder();
+            CriteriaQuery<Product> query = cb.createQuery(Product.class);
+            Root<Product> from = query.from(Product.class);
+            query.select(from);
+            Predicate toyPredicate = cb.equal(from.get("productType"), ProductType.TOY);
+            Predicate carPredicate = cb.equal(from.get("productType"), ProductType.CAR);
+            Predicate pricePredicate = cb.lessThan(from.get("price.grossPrice"), priceGrosse);
+            Predicate toyOrCar = cb.or(toyPredicate, carPredicate);
+            Predicate whereToyOrCarAndPrice = cb.and(toyOrCar, pricePredicate);
+            CriteriaQuery<Product> criteriaQuery = query.where(whereToyOrCarAndPrice);
+
+            return session.createQuery(criteriaQuery).getResultList();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Collections.emptyList();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+    }
+
 }

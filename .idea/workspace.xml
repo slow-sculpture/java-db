@@ -18,11 +18,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.4763897">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="App.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/hibernate/App.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="723">
-                  <caret line="166" column="88" lean-forward="false" selection-start-line="166" selection-start-column="88" selection-end-line="166" selection-end-column="88" />
+                <state relative-caret-position="388">
+                  <caret line="165" column="7" lean-forward="false" selection-start-line="165" selection-start-column="5" selection-end-line="166" selection-end-column="93" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -30,7 +30,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Product.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Product.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/hibernate/shop/product/Product.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="210">
@@ -83,11 +83,11 @@
           <file leaf-file-name="ProductRepository.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/hibernate/shop/product/ProductRepository.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="467">
-                  <caret line="297" column="24" lean-forward="true" selection-start-line="297" selection-start-column="24" selection-end-line="297" selection-end-column="24" />
+                <state relative-caret-position="558">
+                  <caret line="343" column="84" lean-forward="false" selection-start-line="343" selection-start-column="84" selection-end-line="343" selection-end-column="84" />
                   <folding>
-                    <marker date="1520776162374" expanded="true" signature="8051:8071" ph=" SELECT statement (PRODUC)" />
-                    <marker date="1520776162374" expanded="true" signature="8051:8072" ph=" SELECT statement (PRODUCT)" />
+                    <marker date="1520776999321" expanded="true" signature="8051:8071" ph=" SELECT statement (PRODUC)" />
+                    <marker date="1520776999321" expanded="true" signature="8051:8072" ph=" SELECT statement (PRODUCT)" />
                   </folding>
                 </state>
               </provider>
@@ -881,7 +881,14 @@
       <option name="project" value="LOCAL" />
       <updated>1520774623064</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="ProductRespository -&gt; method find">
+      <created>1520776185642</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1520776185642</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -992,11 +999,12 @@
     <MESSAGE value="Package refactor" />
     <MESSAGE value="ProductRespository -&gt; returns a list of all products by given name (upper/lower case or part of a name -&gt;  doesn't matter) using given criterias" />
     <MESSAGE value="ProductRespository -&gt; comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="ProductRespository -&gt; comments" />
+    <MESSAGE value="ProductRespository -&gt; method find" />
+    <option name="LAST_COMMIT_MESSAGE" value="ProductRespository -&gt; method find" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1256,26 +1264,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="53" lean-forward="false" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hibernate/shop/product/Price.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hibernate/shop/product/ProductType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1332,10 +1324,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hibernate/shop/order/Order.java">
+    <entry file="file://$PROJECT_DIR$/src/hibernate.cfg.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="44" column="57" lean-forward="false" selection-start-line="44" selection-start-column="57" selection-end-line="44" selection-end-column="57" />
+        <state relative-caret-position="240">
+          <caret line="16" column="39" lean-forward="true" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hibernate/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="165" column="7" lean-forward="false" selection-start-line="165" selection-start-column="5" selection-end-line="166" selection-end-column="93" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1352,6 +1352,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/hibernate/shop/order/Order.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="44" column="57" lean-forward="false" selection-start-line="44" selection-start-column="57" selection-end-line="44" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hibernate/shop/product/ProductType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/hibernate/shop/product/Product.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -1362,23 +1380,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hibernate/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="723">
-          <caret line="166" column="88" lean-forward="false" selection-start-line="166" selection-start-column="88" selection-end-line="166" selection-end-column="88" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hibernate/shop/product/ProductRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="297" column="24" lean-forward="true" selection-start-line="297" selection-start-column="24" selection-end-line="297" selection-end-column="24" />
+        <state relative-caret-position="558">
+          <caret line="343" column="84" lean-forward="false" selection-start-line="343" selection-start-column="84" selection-end-line="343" selection-end-column="84" />
           <folding>
-            <marker date="1520776162374" expanded="true" signature="8051:8071" ph=" SELECT statement (PRODUC)" />
-            <marker date="1520776162374" expanded="true" signature="8051:8072" ph=" SELECT statement (PRODUCT)" />
+            <marker date="1520776999321" expanded="true" signature="8051:8071" ph=" SELECT statement (PRODUC)" />
+            <marker date="1520776999321" expanded="true" signature="8051:8072" ph=" SELECT statement (PRODUCT)" />
           </folding>
         </state>
       </provider>
