@@ -1,4 +1,4 @@
-package hibernate.shop;
+package hibernate.shop.order;
 
 
 import lombok.AllArgsConstructor;

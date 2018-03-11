@@ -1,6 +1,7 @@
-package hibernate.shop;
+package hibernate.shop.order;
 
 
+import hibernate.shop.complaint.OrderComplaint;
 import lombok.*;
 
 import javax.persistence.*;
@@ -40,7 +41,7 @@ public class Order implements Serializable{
             //joinColumns nazwa kolumny w tabeli dodatkowej z kluczem do tabeli laczonej
             // + nazwa pola w encji z kluczem po ktorym laczymy
             joinColumns = @JoinColumn(name = "order_complaint_id", referencedColumnName = "id"),
-            //nazwa kolumny z kluczem glownym z encji Order
+            //nazwa kolumny z kluczem glownym z encji order
             inverseJoinColumns = @JoinColumn(name = "order_id")
     )
     Set<OrderComplaint> orderComplaintSet;

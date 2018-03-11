@@ -1,4 +1,4 @@
-package hibernate.shop;
+package hibernate.shop.product;
 
 import hibernate.hibernate.util.HibernateUtil;
 import org.hibernate.Session;
@@ -74,7 +74,7 @@ public class ProductRepository {
      * Returns product from DB by id
      *
      * @param id
-     * @return Product or null
+     * @return product or null
      */
     public static Optional<Product> findOneById(Long id) {
         Session session = null;
@@ -96,14 +96,14 @@ public class ProductRepository {
     /**
      * Returns a list of all products
      *
-     * @return List<Product>
+     * @return List<product>
      */
     public static List<Product> findAll() {
 
         Session session = null;
         try {
             session = HibernateUtil.openSession();
-            String jpql = "SELECT p FROM Product p";
+            String jpql = "SELECT p FROM product p";
             Query query = session.createQuery(jpql);
             return query.getResultList();
 
@@ -123,14 +123,14 @@ public class ProductRepository {
      * Returns a list of all products by given product types
      *
      * @param productType
-     * @return List<Product>
+     * @return List<product>
      */
     public static List<Product> findAllByProductType(ProductType productType) {
 
         Session session = null;
         try {
             session = HibernateUtil.openSession();
-            String jpql = "SELECT p FROM Product p WHERE p.productType= :productType";
+            String jpql = "SELECT p FROM product p WHERE p.productType= :productType";
             Query query = session.createQuery(jpql);
             query.setParameter("productType", productType);
             return query.getResultList();
@@ -158,7 +158,7 @@ public class ProductRepository {
         Session session = null;
         try {
             session = HibernateUtil.openSession();
-            String jpql = "SELECT count(p.id) FROM Product p WHERE p.productType= :productType";
+            String jpql = "SELECT count(p.id) FROM product p WHERE p.productType= :productType";
             Query query = session.createQuery(jpql);
             query.setParameter("productType", productType);
             return (Long) query.getSingleResult();
@@ -178,14 +178,14 @@ public class ProductRepository {
     /**
      * Returns a list of products with price less then given
      * @param priceGross
-     * @return List<Product>
+     * @return List<product>
      */
     public static List<Product> findAllWithPriceLess(BigDecimal priceGross) {
 
         Session session = null;
         try {
             session = HibernateUtil.openSession();
-            String jpql = "SELECT p FROM Product p WHERE p.price.grossPrice < :price" ;
+            String jpql = "SELECT p FROM product p WHERE p.price.grossPrice < :price" ;
             Query query = session.createQuery(jpql);
             query.setParameter("price", priceGross);
             return query.getResultList();
@@ -205,14 +205,14 @@ public class ProductRepository {
     /**
      * Returns a list of all products by given name (upper/lower case or part of a name ->  doesn't matter)
      * @param name
-     * @return List<Product>
+     * @return List<product>
      */
     public static List<Product> findAllByNameLike(String name) {
 
         Session session = null;
         try {
             session = HibernateUtil.openSession();
-            String jpql = "SELECT p FROM Product p WHERE UPPER(p.name) like :name";
+            String jpql = "SELECT p FROM product p WHERE UPPER(p.name) like :name";
             Query query = session.createQuery(jpql);
             query.setParameter("name","%"+ name.toUpperCase()+"%");
             return query.getResultList();
@@ -231,7 +231,7 @@ public class ProductRepository {
 
     /**
      * Return all products using MySQL language
-     * @return List<Product>
+     * @return List<product>
      */
     public static List<Product> findAllNative() {
 

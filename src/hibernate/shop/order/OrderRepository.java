@@ -1,10 +1,9 @@
-package hibernate.shop;
+package hibernate.shop.order;
 
 import hibernate.hibernate.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
-import javax.persistence.Column;
 import java.util.Collections;
 import java.util.List;
 
@@ -37,7 +36,7 @@ public class OrderRepository {
         Session session = null;
         try {
             session = HibernateUtil.openSession();
-            String jpql = "SELECT new hibernate.shop.Order(p.totalGross, p.userEmail) FROM Order p";
+            String jpql = "SELECT new hibernate.shop.order.order(p.totalGross, p.userEmail) FROM order p";
             Query query = session.createQuery(jpql);
             return query.getResultList();
 
@@ -57,7 +56,7 @@ public class OrderRepository {
         Session session = null;
             try{
             session=HibernateUtil.openSession();
-            String jpql="SELECT o FROM Order o LEFT JOIN FETCH o.orderDetailSet od WHERE od.product.id = :id";
+            String jpql="SELECT o FROM order o LEFT JOIN FETCH o.orderDetailSet od WHERE od.product.id = :id";
             //String jpql2 = "SELECT o FROM OrderDetail od LEFT JOIN od.order o WHERE od.product.id = :id";
             Query query = session.createQuery(jpql);
             query.setParameter("id",productId);
@@ -77,7 +76,7 @@ public class OrderRepository {
         Session session = null;
         try {
             session = HibernateUtil.openSession();
-            String jpql="SELECT o FROM Order o LEFT JOIN FETCH o.orderDetailSet od";
+            String jpql="SELECT o FROM order o LEFT JOIN FETCH o.orderDetailSet od";
             Query query = session.createQuery(jpql);
             return query.getResultList();
 

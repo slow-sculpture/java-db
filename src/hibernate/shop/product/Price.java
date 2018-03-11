@@ -1,4 +1,4 @@
-package hibernate.shop;
+package hibernate.shop.product;
 
 import javax.persistence.Embeddable;
 import javax.persistence.Transient;

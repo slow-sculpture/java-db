@@ -1,5 +1,7 @@
-package hibernate.shop;
+package hibernate.shop.order;
 
+import hibernate.shop.product.Price;
+import hibernate.shop.product.Product;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

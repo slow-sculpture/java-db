@@ -1,4 +1,4 @@
-package hibernate.shop;
+package hibernate.shop.complaint;
 
 import hibernate.hibernate.util.HibernateUtil;
 import org.hibernate.Session;

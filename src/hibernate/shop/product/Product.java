@@ -1,5 +1,6 @@
-package hibernate.shop;
+package hibernate.shop.product;
 
+import hibernate.shop.order.OrderDetail;
 import lombok.EqualsAndHashCode;
 
 import java.io.Serializable;

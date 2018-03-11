@@ -13,11 +13,11 @@
 
   		<property name="hibernate.hbm2ddl.auto">create-drop</property>
 
-        <mapping class="hibernate.shop.Product"/>
-        <mapping class="hibernate.shop.Order"/>
-        <mapping class="hibernate.shop.OrderDetail"/>
-        <mapping class="hibernate.shop.OrderHistory"/>
-        <mapping class="hibernate.shop.OrderComplaint"/>
+        <mapping class="hibernate.shop.product.Product"/>
+        <mapping class="hibernate.shop.order.Order"/>
+        <mapping class="hibernate.shop.order.OrderDetail"/>
+        <mapping class="hibernate.shop.order.OrderHistory"/>
+        <mapping class="hibernate.shop.complaint.OrderComplaint"/>
 
     </session-factory>
 </hibernate-configuration>

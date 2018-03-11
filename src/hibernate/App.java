@@ -1,7 +1,15 @@
 package hibernate;
 
 
-import hibernate.shop.*;
+import hibernate.shop.complaint.ComplaintStatus;
+import hibernate.shop.complaint.OrderComplaint;
+import hibernate.shop.order.Order;
+import hibernate.shop.order.OrderDetail;
+import hibernate.shop.order.OrderRepository;
+import hibernate.shop.product.Price;
+import hibernate.shop.product.Product;
+import hibernate.shop.product.ProductRepository;
+import hibernate.shop.product.ProductType;
 
 
 import java.math.BigDecimal;
@@ -129,7 +137,7 @@ public class App {
                     System.out.println("zamowienie o id "+o.getId()+" "+od.getProduct().getName()));
         }
         //powyzsze wyrzuca blad bo listy i sety nie sa pobierane automatycznie zeby nie obciazac DB -> LAZY
-        //mozna albo ustawic FetchType.EAGER (dodane po // w Order)
+        //mozna albo ustawic FetchType.EAGER (dodane po // w order)
         //albo zrobic specjalne zapytanie SQL: LEFT JOIN FETCH (dodane w OrderRepository.findAllOrderWithProduct
 
         System.out.println();
@@ -148,6 +156,8 @@ public class App {
                 .message("New complaint from John")
                 .orderSet(orderSet)
                 .build();
+
+
 
     }
 }

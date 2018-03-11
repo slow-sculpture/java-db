@@ -1,10 +1,8 @@
-package hibernate.shop;
+package hibernate.shop.complaint;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import hibernate.shop.order.Order;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -15,6 +13,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@EqualsAndHashCode(exclude = "orderSet")
 public class OrderComplaint implements Serializable {
 
     @Id
