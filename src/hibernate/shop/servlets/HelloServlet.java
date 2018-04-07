@@ -11,7 +11,7 @@ public class HelloServlet extends HttpServlet{
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter writer = resp.getWriter();
-        writer.write("<html><head></head><body><h1>hellooooo</h1></body></html>");
+        writer.write("<html><head></head><body><h1>hellooooo sfsdfsd</h1></body></html>");
     }
     //wykonac plik WebContent/WEB-INF/web.xml
 }
