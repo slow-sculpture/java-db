@@ -163,8 +163,8 @@ public class App {
         ProductRepository.findAllByNameLikeWithCriteria("merc")
                 .forEach(p-> System.out.println("find all by merc: "+p.getName()));
 
-     /*   ProductRepository.findAllCarOrToyWithPriceLessThen(new BigDecimal(70000))
-        .forEach(p-> System.out.println("findAllCarOrToyWithPriceLessThen: "+p.getName()));*/
+        ProductRepository.findAllCarOrToyWithPriceLessThen(new BigDecimal(70000))
+        .forEach(p-> System.out.println("findAllCarOrToyWithPriceLessThen: "+p.getName()));
 
 
 

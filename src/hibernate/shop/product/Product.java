@@ -1,5 +1,6 @@
 package hibernate.shop.product;
 
+import hibernate.shop.cart.CartDetail;
 import hibernate.shop.order.OrderDetail;
 import lombok.EqualsAndHashCode;
 
@@ -31,6 +32,9 @@ public class Product implements Serializable {
     //jeden produkt moze byc na wielu pozycjach zamowienia
     @OneToMany (mappedBy = "product")
     Set<OrderDetail> orderDetailSet;
+
+//    @OneToMany
+//    Set<CartDetail> cartDetailSet;
 
     //bezargumentowy konstruktor dla hibernate
     public Product(){
