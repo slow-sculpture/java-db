@@ -2,19 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c86f16b-3ece-4eeb-84f7-f3a2663167b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hibernate/shop/cart/Cart.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hibernate/shop/cart/CartDetail.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/.travis.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/a/orderHistory.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/a/product.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/cart.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/complaint.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/css/shop-homepage.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/css/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/gulpfile.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/login.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/order.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/orderHistory.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/orderMessage.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/package-lock.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/page.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/product.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/register.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/vendor/bootstrap/css/bootstrap-grid.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/vendor/bootstrap/css/bootstrap-grid.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/vendor/bootstrap/css/bootstrap-reboot.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/vendor/bootstrap/css/bootstrap-reboot.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/vendor/bootstrap/css/bootstrap.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/vendor/bootstrap/css/bootstrap.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/vendor/bootstrap/css/bootstrap.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/vendor/bootstrap/css/bootstrap.min.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/vendor/bootstrap/js/bootstrap.bundle.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/vendor/bootstrap/js/bootstrap.bundle.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/vendor/bootstrap/js/bootstrap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/vendor/bootstrap/js/bootstrap.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/vendor/bootstrap/js/bootstrap.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/vendor/bootstrap/js/bootstrap.min.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/vendor/jquery/jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/vendor/jquery/jquery.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/vendor/jquery/jquery.min.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/vendor/jquery/jquery.slim.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/vendor/jquery/jquery.slim.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/startbootstrap-shop-homepage-gh-pages/vendor/jquery/jquery.slim.min.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate/App.java" afterPath="$PROJECT_DIR$/src/hibernate/App.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate/shop/complaint/OrderComplaint.java" afterPath="$PROJECT_DIR$/src/hibernate/shop/complaint/OrderComplaint.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate/shop/complaint/OrderComplaintRepository.java" afterPath="$PROJECT_DIR$/src/hibernate/shop/complaint/OrderComplaintRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate/shop/order/Order.java" afterPath="$PROJECT_DIR$/src/hibernate/shop/order/Order.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate/shop/order/OrderDetail.java" afterPath="$PROJECT_DIR$/src/hibernate/shop/order/OrderDetail.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate/shop/order/OrderHistory.java" afterPath="$PROJECT_DIR$/src/hibernate/shop/order/OrderHistory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate/shop/order/OrderRepository.java" afterPath="$PROJECT_DIR$/src/hibernate/shop/order/OrderRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate/shop/product/Price.java" afterPath="$PROJECT_DIR$/src/hibernate/shop/product/Price.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate/shop/product/Product.java" afterPath="$PROJECT_DIR$/src/hibernate/shop/product/Product.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate/shop/product/ProductRepository.java" afterPath="$PROJECT_DIR$/src/hibernate/shop/product/ProductRepository.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,8 +76,8 @@
               <file leaf-file-name="Product.java" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/src/hibernate/shop/product/Product.java">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="349">
-                      <caret line="45" column="35" lean-forward="false" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
+                    <state relative-caret-position="289">
+                      <caret line="41" column="5" lean-forward="false" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
                       <folding>
                         <element signature="method#Product#0;class#Product#0" expanded="false" />
                       </folding>
@@ -170,8 +201,8 @@
               <file leaf-file-name="Cart.java" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/src/hibernate/shop/cart/Cart.java">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="150">
-                      <caret line="15" column="18" lean-forward="false" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+                    <state relative-caret-position="375">
+                      <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
                       <folding />
                     </state>
                   </provider>
@@ -277,9 +308,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="66" />
-    <option name="width" value="1371" />
-    <option name="height" value="1047" />
+    <option name="x" value="153" />
+    <option name="y" value="52" />
+    <option name="width" value="1536" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -326,6 +358,24 @@
             <path>
               <item name="Ogloszenia" type="b2602c69:ProjectViewProjectNode" />
               <item name="java5pozHibernate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ogloszenia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java5pozHibernate" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ogloszenia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java5pozHibernate" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+              <item name="startbootstrap-shop-homepage-gh-pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ogloszenia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java5pozHibernate" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+              <item name="startbootstrap-shop-homepage-gh-pages" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Ogloszenia" type="b2602c69:ProjectViewProjectNode" />
@@ -1007,7 +1057,14 @@
       <option name="project" value="LOCAL" />
       <updated>1520777013151</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Cart">
+      <created>1523087019214</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1523087019214</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -1015,7 +1072,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1029,7 +1085,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15298508" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15298508" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1119,7 +1175,8 @@
     <MESSAGE value="ProductRespository -&gt; returns a list of all products by given name (upper/lower case or part of a name -&gt;  doesn't matter) using given criterias" />
     <MESSAGE value="ProductRespository -&gt; comments" />
     <MESSAGE value="ProductRespository -&gt; method find" />
-    <option name="LAST_COMMIT_MESSAGE" value="ProductRespository -&gt; method find" />
+    <MESSAGE value="Cart" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cart" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1550,14 +1607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hibernate/shop/cart/Cart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="15" column="18" lean-forward="false" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hibernate/shop/cart/CartDetail.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -1568,11 +1617,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hibernate/shop/product/Product.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="45" column="35" lean-forward="false" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
+        <state relative-caret-position="289">
+          <caret line="41" column="5" lean-forward="false" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
           <folding>
             <element signature="method#Product#0;class#Product#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hibernate/shop/cart/Cart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
