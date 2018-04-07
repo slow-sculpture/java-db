@@ -10,22 +10,23 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 @Entity
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
 @Builder
-@EqualsAndHashCode
-public class CartDetail implements Serializable{
+public class CartDetail {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn
+    Product product;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn
+    Cart cart;
+    BigDecimal amount;
     @Embedded
     Price price;
-    int amount;
-    @ManyToOne
-    Cart cart;
-//    @ManyToOne
-//    Product product;
-
-
 }
+

@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Optional;
 
 @WebServlet(name = "RegisterServlet")
 public class RegisterServlet extends HttpServlet {
@@ -28,6 +29,13 @@ public class RegisterServlet extends HttpServlet {
             System.out.println("Hasla sa rozne");
             isValid=false;
         }
+
+        Optional<User> byEmail = UserRepository.findByEmail(email);
+        if(byEmail.isPresent()){
+            isValid=false;
+            System.out.println("Uzytkownik z takim emailem juz istnieje");
+        }
+
         if(isValid) {
             User user = new User();
             user.setEmail(email);
