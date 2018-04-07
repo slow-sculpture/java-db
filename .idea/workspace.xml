@@ -7,13 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c86f16b-3ece-4eeb-84f7-f3a2663167b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hibernate/shop/cart/CartRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hibernate/shop/servlets/AddProductToCartServlet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate/shop/cart/Cart.java" afterPath="$PROJECT_DIR$/src/hibernate/shop/cart/Cart.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate/shop/cart/CartDetail.java" afterPath="$PROJECT_DIR$/src/hibernate/shop/cart/CartDetail.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate/shop/servlets/RegisterServlet.java" afterPath="$PROJECT_DIR$/src/hibernate/shop/servlets/RegisterServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate/shop/user/User.java" afterPath="$PROJECT_DIR$/src/hibernate/shop/user/User.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate/shop/servlets/AddProductToCartServlet.java" afterPath="$PROJECT_DIR$/src/hibernate/shop/servlets/AddProductToCartServlet.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -91,11 +86,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddProductToCartServlet.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AddProductToCartServlet.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/hibernate/shop/servlets/AddProductToCartServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="40" lean-forward="true" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+            <state relative-caret-position="680">
+              <caret line="40" column="40" lean-forward="false" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -103,11 +98,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CartRepository.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CartRepository.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hibernate/shop/cart/CartRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="43" column="32" lean-forward="true" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+            <state relative-caret-position="260">
+              <caret line="38" column="30" lean-forward="true" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -195,8 +190,8 @@
         <option value="$PROJECT_DIR$/src/hibernate/shop/cart/CartDetail.java" />
         <option value="$PROJECT_DIR$/src/hibernate/shop/user/User.java" />
         <option value="$PROJECT_DIR$/src/hibernate/shop/cart/Cart.java" />
-        <option value="$PROJECT_DIR$/src/hibernate/shop/servlets/AddProductToCartServlet.java" />
         <option value="$PROJECT_DIR$/src/hibernate/shop/cart/CartRepository.java" />
+        <option value="$PROJECT_DIR$/src/hibernate/shop/servlets/AddProductToCartServlet.java" />
       </list>
     </option>
   </component>
@@ -833,7 +828,7 @@
       <workItem from="1523104173114" duration="1798000" />
       <workItem from="1523106004046" duration="1026000" />
       <workItem from="1523107065170" duration="91000" />
-      <workItem from="1523107596788" duration="4282000" />
+      <workItem from="1523107596788" duration="4817000" />
     </task>
     <task id="LOCAL-00001" summary="encja Product">
       <created>1520674409830</created>
@@ -1129,11 +1124,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523110329104</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Servlets: add product to cart servlet">
+      <created>1523111945495</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1523111945495</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11583000" />
+    <option name="totallyTimeSpent" value="12118000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1254,7 +1256,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="ProductRepository - returns data from DB by id" />
     <MESSAGE value="ProductRepository - returns a list of all products" />
     <MESSAGE value="ProductRepository - returns a list of products by given product type" />
     <MESSAGE value="ProductRepository - returns an amount of products by given product type" />
@@ -1279,7 +1280,8 @@
     <MESSAGE value="Servlets: login" />
     <MESSAGE value="User entity &amp; UserRepository" />
     <MESSAGE value="Servlets: register" />
-    <option name="LAST_COMMIT_MESSAGE" value="Servlets: register" />
+    <MESSAGE value="Servlets: add product to cart servlet" />
+    <option name="LAST_COMMIT_MESSAGE" value="Servlets: add product to cart servlet" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1634,20 +1636,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hibernate/shop/servlets/AddProductToCartServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/hibernate/shop/cart/CartRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="40" lean-forward="true" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+        <state relative-caret-position="260">
+          <caret line="38" column="30" lean-forward="true" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hibernate/shop/cart/CartRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/hibernate/shop/servlets/AddProductToCartServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="43" column="32" lean-forward="true" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+        <state relative-caret-position="680">
+          <caret line="40" column="40" lean-forward="false" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
