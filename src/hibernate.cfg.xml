@@ -11,7 +11,7 @@
 
         <property name="show_sql">true</property>
 
-  		<property name="hibernate.hbm2ddl.auto">create-drop</property>
+  		<property name="hibernate.hbm2ddl.auto">update</property>
 
         <mapping class="hibernate.shop.product.Product"/>
         <mapping class="hibernate.shop.order.Order"/>
@@ -19,6 +19,8 @@
         <mapping class="hibernate.shop.order.OrderHistory"/>
         <mapping class="hibernate.shop.complaint.OrderComplaint"/>
         <mapping class="hibernate.shop.user.User"/>
+        <mapping class="hibernate.shop.cart.Cart"/>
+        <mapping class="hibernate.shop.cart.CartDetail"/>
 
     </session-factory>
 </hibernate-configuration>

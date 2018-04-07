@@ -23,5 +23,7 @@ public class User implements Serializable {
     Long id;
     String email;
     String password;
+    String firstName;
+    String lastName;
 
 }

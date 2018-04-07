@@ -1,10 +1,14 @@
 package hibernate.shop.servlets;
 
+import hibernate.shop.user.User;
+import hibernate.shop.user.UserRepository;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Optional;
 
 public class LoginServlet extends HttpServlet{
     @Override
@@ -13,5 +17,7 @@ public class LoginServlet extends HttpServlet{
         String email = req.getParameter("email");
 
         System.out.println("password: "+password+" email: "+email);
+        Optional<User> byEmailAndPassword = UserRepository.findByEmailAndPassword(email, password);
+        byEmailAndPassword.ifPresent(x-> System.out.println(x.getId()));
     }
 }
