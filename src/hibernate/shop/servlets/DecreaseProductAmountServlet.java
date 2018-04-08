@@ -36,7 +36,7 @@ public class DecreaseProductAmountServlet extends HttpServlet {
                     } else if (method.equals("substract")) {
                         if (cd.getAmount().compareTo(BigDecimal.ONE) < 1) {
                             //usuwanie produktu
-
+                            byUserId.get().getCartDetailSet().remove(cd);
                         } else {
                             cd.setAmount(cd.getAmount().subtract(BigDecimal.ONE));
                         }

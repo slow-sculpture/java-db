@@ -7,14 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c86f16b-3ece-4eeb-84f7-f3a2663167b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hibernate/shop/servlets/ChangeProductAmountServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hibernate/shop/servlets/DecreaseProductAmountServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hibernate/shop/servlets/LogoutServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hibernate/shop/utils/ProjectHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hibernate/shop/utils/UserSessionHelper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate/shop/servlets/AddProductToCartServlet.java" afterPath="$PROJECT_DIR$/src/hibernate/shop/servlets/AddProductToCartServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate/shop/servlets/DecreaseProductAmountServlet.java" afterPath="$PROJECT_DIR$/src/hibernate/shop/servlets/DecreaseProductAmountServlet.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -70,7 +64,7 @@
                 <entry file="file://$PROJECT_DIR$/src/hibernate/shop/servlets/DecreaseProductAmountServlet.java">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="425">
-                      <caret line="38" column="28" lean-forward="false" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
+                      <caret line="38" column="73" lean-forward="false" selection-start-line="38" selection-start-column="73" selection-end-line="38" selection-end-column="73" />
                       <folding>
                         <element signature="imports" expanded="true" />
                       </folding>
@@ -896,7 +890,7 @@
       <workItem from="1523106004046" duration="1026000" />
       <workItem from="1523107065170" duration="91000" />
       <workItem from="1523107596788" duration="4847000" />
-      <workItem from="1523175094968" duration="16452000" />
+      <workItem from="1523175094968" duration="16648000" />
     </task>
     <task id="LOCAL-00001" summary="encja Product">
       <created>1520674409830</created>
@@ -1227,11 +1221,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523189709876</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Servlets: decrease/increas product amount and delete product from cart">
+      <created>1523194392805</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1523194392805</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28600000" />
+    <option name="totallyTimeSpent" value="28796000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1331,7 +1332,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="ProductRepository - returns a list of products by given product type" />
     <MESSAGE value="ProductRepository - returns an amount of products by given product type" />
     <MESSAGE value="ProductRepository - returns all products of price less then given" />
     <MESSAGE value="ProductRepository - returns all products by given name" />
@@ -1356,7 +1356,8 @@
     <MESSAGE value="Servlets: register" />
     <MESSAGE value="Servlets: add product to cart servlet" />
     <MESSAGE value="Servlets: get user id by cookie" />
-    <option name="LAST_COMMIT_MESSAGE" value="Servlets: get user id by cookie" />
+    <MESSAGE value="Servlets: decrease/increas product amount and delete product from cart" />
+    <option name="LAST_COMMIT_MESSAGE" value="Servlets: decrease/increas product amount and delete product from cart" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1511,7 +1512,7 @@
     <entry file="file://$PROJECT_DIR$/src/hibernate/shop/servlets/DecreaseProductAmountServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
-          <caret line="38" column="28" lean-forward="false" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
+          <caret line="38" column="73" lean-forward="false" selection-start-line="38" selection-start-column="73" selection-end-line="38" selection-end-column="73" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
