@@ -12,7 +12,7 @@ import java.util.Set;
 
 @Entity
 @Data
-@EqualsAndHashCode(exclude = "cartDetailSet")
+@EqualsAndHashCode(exclude = {"cartDetailSet", "user"})
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
