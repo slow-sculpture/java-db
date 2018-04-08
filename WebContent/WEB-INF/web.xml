@@ -26,6 +26,11 @@
         <servlet-class>hibernate.shop.servlets.AddProductToCartServlet</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>hibernate.shop.servlets.LogoutServlet</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>HelloServlet</servlet-name>
         <url-pattern>/hello</url-pattern>
@@ -44,6 +49,11 @@
     <servlet-mapping>
         <servlet-name>AddProductToCartServlet</servlet-name>
         <url-pattern>/addToCart</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
     </servlet-mapping>
 
 </web-app>

@@ -6,17 +6,15 @@ import hibernate.shop.cart.CartRepository;
 import hibernate.shop.product.Product;
 import hibernate.shop.product.ProductRepository;
 import hibernate.shop.user.User;
-import hibernate.shop.user.UserRepository;
+import hibernate.shop.utils.ProjectHelper;
+import hibernate.shop.utils.UserSessionHelper;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.math.BigDecimal;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Optional;
 
@@ -24,15 +22,10 @@ public class AddProductToCartServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         PrintWriter writer = resp.getWriter();
-        User user = null;
-        Optional<Cookie> emailCookie = Arrays.stream(req.getCookies()).filter(x -> x.getName().equals("email")).findFirst();
-        if (emailCookie.isPresent()) {
-            Optional<User> byEmail = UserRepository.findByEmail(emailCookie.get().getValue());
-            user = byEmail.orElse(null);
-        }
+        User user = UserSessionHelper.getUserFromCookie(req.getCookies());
 
-        Long productId = parseStringToLong(req.getParameter("productId"));
-        BigDecimal productAmount = parseStringToBigDecimal(req.getParameter("productAmount"));
+        Long productId = ProjectHelper.parseStringToLong(req.getParameter("productId"));
+        BigDecimal productAmount = ProjectHelper.parseStringToBigDecimal(req.getParameter("productAmount"));
 
         if (productId > 0 && productAmount.compareTo(BigDecimal.ZERO) == 1 && user != null) {
 
@@ -84,21 +77,7 @@ public class AddProductToCartServlet extends HttpServlet {
         }
     }
 
-    private Long parseStringToLong(String productId) {
-        try {
-            return Long.valueOf(productId);
-        } catch (NumberFormatException nbf) {
-            return 0L;
-        }
-    }
 
-    private BigDecimal parseStringToBigDecimal(String productAmount) {
-        try {
-            return new BigDecimal(productAmount);
-        } catch (NumberFormatException nbf) {
-            return BigDecimal.ZERO;
-        }
-    }
 
 
     private boolean createNwCartDetail(Long productId, BigDecimal productAmount, Cart cart) {
