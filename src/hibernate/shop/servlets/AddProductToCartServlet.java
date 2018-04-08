@@ -24,17 +24,17 @@ public class AddProductToCartServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         PrintWriter writer = resp.getWriter();
-        User user= null;
+        User user = null;
         Optional<Cookie> emailCookie = Arrays.stream(req.getCookies()).filter(x -> x.getName().equals("email")).findFirst();
-        if(emailCookie.isPresent()){
+        if (emailCookie.isPresent()) {
             Optional<User> byEmail = UserRepository.findByEmail(emailCookie.get().getValue());
-            user=byEmail.orElse(null);
+            user = byEmail.orElse(null);
         }
 
         Long productId = parseStringToLong(req.getParameter("productId"));
         BigDecimal productAmount = parseStringToBigDecimal(req.getParameter("productAmount"));
 
-        if (productId > 0 && productAmount.compareTo(BigDecimal.ZERO) == 1 && user!=null) {
+        if (productId > 0 && productAmount.compareTo(BigDecimal.ZERO) == 1 && user != null) {
 
 
             Optional<Cart> byUserId = CartRepository.findByUserId(user.getId());
@@ -56,9 +56,8 @@ public class AddProductToCartServlet extends HttpServlet {
                 }
 
             } else {
-                Optional<User> byEmail = UserRepository.findByEmail("asda@gg");
                 Cart cart = new Cart();
-                cart.setUser(byEmail.get());
+                cart.setUser(user);
                 cart.setCartDetailSet(new HashSet<>());
                 boolean result = createNwCartDetail(productId, productAmount, cart);
                 if (result) {
@@ -78,6 +77,9 @@ public class AddProductToCartServlet extends HttpServlet {
                 writer.write("Nie mozna dodac produktu z iloscia ujemna badz zerowa");
             } else {
                 writer.write("Nie ma takiego produktu");
+            }
+            if(user==null){
+                writer.write("Prosze sie zalogowac");
             }
         }
     }
