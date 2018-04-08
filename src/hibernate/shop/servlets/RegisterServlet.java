@@ -25,7 +25,7 @@ public class RegisterServlet extends HttpServlet {
             System.out.println("Prosze uzupelnic formularz");
             isValid=false;
         }
-        if(password.equals(password2)){
+        if(!password.equals(password2)){
             System.out.println("Hasla sa rozne");
             isValid=false;
         }

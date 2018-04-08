@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.HashSet;
 import java.util.Optional;
 import java.util.OptionalInt;
 
@@ -26,11 +27,21 @@ public class AddProductToCartServlet extends HttpServlet {
 
         Optional<Cart> byUserId = CartRepository.findByUserId(userId);
         if(byUserId.isPresent()){
+            Cart cart = byUserId.get();
+            Optional<CartDetail> productInCart=cart.getCartDetailSet().stream()
+                    .filter(cd->cd.getProduct().getId().equals(Integer.valueOf(productId)))
+                    .findFirst();
+            if(productInCart.isPresent()){
+                //produkt jest juz w koszyku
+                productInCart.get().setAmount(productInCart.get().getAmount().add(new BigDecimal(productAmount)));
+                CartRepository.saveCart(cart);
+            }
 
         }else {
             Optional<User> byEmail= UserRepository.findByEmail("test@wp.pl");
             Cart cart = new Cart();
             cart.setUser(byEmail.get());
+            cart.setCartDetailSet(new HashSet<>());
             CartDetail cartDetail = new CartDetail();
             cartDetail.setAmount(new BigDecimal(productAmount));
             Optional<Product> oneById = ProductRepository.findOneById(Long.valueOf(productId));
