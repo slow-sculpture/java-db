@@ -1,4 +1,9 @@
+<%@ page import="java.util.Optional" %>
+<%@ page import="hibernate.shop.product.Product" %>
+<%@ page import="hibernate.shop.product.ProductRepository" %>
+<%@ page import="hibernate.shop.utils.ProjectHelper" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,7 +42,10 @@
 
 
   </head>
-
+<%
+  Optional<Product> product= ProductRepository.findOneById(ProjectHelper.parseStringToLong(request.getParameter("productId")));
+  pageContext.setAttribute("product", product);
+%>
   <body>
 
     <!-- Navigation -->
@@ -47,9 +55,7 @@
     <div class="container">
 
       <!-- Portfolio Item Heading -->
-      <h1 class="my-4">Page Heading
-        <small>Secondary Text</small>
-      </h1>
+      <h1 class="my-4">${product.name}</h1>
 
       <!-- Portfolio Item Row -->
       <div class="row">

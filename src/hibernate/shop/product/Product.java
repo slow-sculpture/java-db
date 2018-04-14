@@ -23,6 +23,7 @@ public class Product implements Serializable {
     //za pomoca column mozna np zmienic nazwe, zdefiniowac jakiej dlugosci jest pole
     //@Column(name="data_dodania", length = 20;)
     private LocalDate date;
+    private String description;
     @Enumerated
     private ProductType productType;
 
