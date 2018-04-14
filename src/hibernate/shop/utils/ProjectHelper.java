@@ -18,4 +18,10 @@ public class ProjectHelper {
             return BigDecimal.ZERO;
         }
     }
+    public static Double parseStringToDouble(String productAmount) {
+        try {
+            return new Double(productAmount);
+        } catch (NumberFormatException nbf) {
+            return new Double(0);
+        }}
 }

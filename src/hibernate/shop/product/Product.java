@@ -11,7 +11,7 @@ import javax.persistence.*;
 
 
 @Entity
-@EqualsAndHashCode(exclude = "orderDetailSet")
+@EqualsAndHashCode(exclude = {"orderDetailSet", "productRatingSet"})
 //jakbysmy chcieli zmienic nazwe tabeli
 //@Table("product")
 public class Product implements Serializable {
@@ -30,11 +30,12 @@ public class Product implements Serializable {
     private Price price;
 
     //jeden produkt moze byc na wielu pozycjach zamowienia
-    @OneToMany (mappedBy = "product")
+    @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
     Set<OrderDetail> orderDetailSet;
 
-//    @OneToMany
-//    Set<CartDetail> cartDetailSet;
+    @OneToMany (mappedBy = "product")
+    Set<ProductRating> productRatingSet;
+
 
     //bezargumentowy konstruktor dla hibernate
     public Product(){

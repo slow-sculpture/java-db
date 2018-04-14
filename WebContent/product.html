@@ -16,6 +16,25 @@
     <!-- Custom styles for this template -->
     <link href="css/portfolio-item.css" rel="stylesheet">
 
+    <!-- rating -->
+    <!-- default styles -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
+    <link href="css/star-rating.css" media="all" rel="stylesheet" type="text/css" />
+
+    <!-- optionally if you need to use a theme, then include the theme CSS file as mentioned below -->
+    <link href="themes/krajee-svg/theme.css" media="all" rel="stylesheet" type="text/css" />
+
+    <!-- important mandatory libraries -->
+    <script src="js/jquery.js"></script>
+    <script src="js/star-rating.js" type="text/javascript"></script>
+
+    <!-- optionally if you need to use a theme, then include the theme JS file as mentioned below -->
+    <script src="themes/krajee-svg/theme.js"></script>
+
+
+
+
+
   </head>
 
   <body>
@@ -109,6 +128,22 @@
 
       </div>
       <!-- /.row -->
+
+	  <!-- productRating -->
+      <div class="col-md-12">
+
+        <div>
+          <form method="post" action="/addNewProductRating" >
+          <label>Opinia:</label>
+          <textarea class="form-control" name="description" > </textarea>
+          <input id="input-id" name="rating" type="text" class="rating" data-size="lg" >
+          <input type="hidden" value="1" name="productId" />
+          <button type="submit" class="btn-primary btn"> Zapisz</button>
+
+          </form>
+        </div>
+
+      </div>
 
     </div>
     <!-- /.container -->

@@ -2,10 +2,7 @@ package hibernate.shop.user;
 
 import hibernate.shop.cart.Cart;
 import hibernate.shop.product.ProductRating;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -16,6 +13,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@EqualsAndHashCode(exclude = "productRatingSet")
 public class User implements Serializable {
 
     @Id
