@@ -35,22 +35,29 @@ public class Cart {
         cartDetailSet.add(cartDetail);
     }
 
-    @Transient
-    public Price getPrice(){
-        Price price = new Price();
-        price.setGrossPrice(new BigDecimal(0));
-        price.setNettoPrice(new BigDecimal(0));
+    public BigDecimal getTotalGrossPrice(){
+      /*  double sum = cartDetailSet.stream()
+                .mapToDouble(cd -> cd.getAmount().multiply(cd.getPrice().getGrossPrice()).doubleValue()).sum();
+        return new BigDecimal(sum);*/
+/*
+        BigDecimal totalGross = new BigDecimal(0);
+        cartDetailSet.forEach(cd->totalGross.add(cd.getAmount().multiply(cd.getPrice().getGrossPrice())));
+        return totalGross;*/
 
-        if(cartDetailSet != null && cartDetailSet.size() > 0)
-            for(CartDetail cd : cartDetailSet){
-                BigDecimal nettoPrice = cd.getPrice().getNettoPrice().multiply(cd.getAmount());
-                BigDecimal grossPrice = cd.getPrice().getGrossPrice().multiply(cd.getAmount());
-                price.setNettoPrice(price.getNettoPrice().add(nettoPrice));
-                price.setGrossPrice(price.getGrossPrice().add(grossPrice));
+        BigDecimal totalGross =
+                cartDetailSet.stream().map(cd->cd.getAmount().multiply(cd.getPrice().getGrossPrice()))
+                        .reduce(BigDecimal.ZERO,BigDecimal::add);
 
-            }
-
-        return price;
+        return totalGross;
     }
+    public BigDecimal getTotalNettoPrice(){
+        BigDecimal totalNetto =
+        cartDetailSet.stream().map(cd->cd.getAmount().multiply(cd.getPrice().getNettoPrice()))
+                .reduce(BigDecimal.ZERO,BigDecimal::add);
+
+        return totalNetto;
+    }
+
+
 
 }

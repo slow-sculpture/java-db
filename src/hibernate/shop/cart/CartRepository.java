@@ -29,6 +29,24 @@ public class CartRepository {
             }
         }
     }
+    public static void removeCart(Cart cart){
+        Session session = null;
+        try {
+            session = HibernateUtil.openSession();
+            session.getTransaction().begin();
+            session.remove(cart);
+            session.getTransaction().commit();
+        }catch (Exception ex){
+            ex.printStackTrace();
+            if(session.getTransaction().isActive()){
+                session.getTransaction().rollback();
+            }
+        }finally {
+            if(session != null && session.isOpen()){
+                session.close();
+            }
+        }
+    }
 
     public static Optional<Cart> findOneById(Long id){
         Session session = null;

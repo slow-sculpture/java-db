@@ -1,6 +1,7 @@
 package hibernate.shop.user;
 
 import hibernate.shop.cart.Cart;
+import hibernate.shop.product.ProductRating;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -8,6 +9,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 @Data
@@ -25,5 +27,7 @@ public class User implements Serializable {
     String lastName;
     @OneToOne(mappedBy = "user")
     Cart cart;
+    @OneToMany(mappedBy = "user")
+    Set<ProductRating> productRatingSet;
 
 }

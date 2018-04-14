@@ -21,6 +21,7 @@
         <mapping class="hibernate.shop.user.User"/>
         <mapping class="hibernate.shop.cart.Cart"/>
         <mapping class="hibernate.shop.cart.CartDetail"/>
+        <mapping class="hibernate.shop.product.ProductRating"/>
 
     </session-factory>
 </hibernate-configuration>
