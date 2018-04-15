@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Data
@@ -21,8 +21,12 @@ public class OrderHistory implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    LocalDate confirmDate;
+    LocalDateTime statusDate;
 
-    @OneToOne
+    @Enumerated (EnumType.STRING)
+    OrderStatus orderStatus;
+
+    @ManyToOne
+    @JoinColumn
     Order order;
 }

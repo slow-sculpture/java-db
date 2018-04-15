@@ -16,7 +16,7 @@ import java.util.Set;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(exclude = {"orderDetailSet", "orderComplaintSet"})
+@EqualsAndHashCode(exclude = {"orderDetailSet", "orderComplaintSet","orderHistorySet"})
 public class Order implements Serializable {
 
     @Id
@@ -35,8 +35,8 @@ public class Order implements Serializable {
             // wlascicielem realacji bedzie order detail
             Set<OrderDetail> orderDetailSet;
 
-    @OneToOne(mappedBy = "order")
-    OrderHistory orderHistory;
+    @OneToMany(mappedBy = "order",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    Set<OrderHistory> orderHistorySet;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     //join table do laczenia przez tabele dodatkowa
@@ -58,5 +58,10 @@ public class Order implements Serializable {
     public void addOrderDetail(OrderDetail orderDetail) {
         orderDetail.setOrder(this);
         orderDetailSet.add(orderDetail);
+    }
+
+    public void addOrderHistorySet(OrderHistory orderHistory) {
+        orderHistory.setOrder(this);
+        this.orderHistorySet.add(orderHistory);
     }
 }

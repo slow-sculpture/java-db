@@ -70,9 +70,11 @@
                         </td>
                         <td>${cd.price.nettoPrice}</td>
                         <td>${cd.price.grossPrice}</td>
-                        <fmt:parseNumber var="totalNettoPrice" type="number"
+                        <fmt:formatNumber var="totalNettoPrice" type="number"
+                                          minFractionDigits="2" maxFractionDigits="2"
                                          value="${cd.price.nettoPrice.multiply(cd.amount)}"/>
-                        <fmt:parseNumber var="totalNettoPrice" type="number"
+                        <fmt:formatNumber var="totalNettoPrice" type="number"
+                                          minFractionDigits="2" maxFractionDigits="2"
                                          value="${cd.price.grossPrice.multiply(cd.amount)}"/>
                         <td>${cd.price.nettoPrice.multiply(cd.amount)}</td>
                         <td>${cd.price.grossPrice.multiply(cd.amount)}</td>
@@ -84,8 +86,12 @@
                 <tr>
                     <td></td>
                     <td><b>Suma:</b></td>
-                    <td>${cart.totalNettoPrice} netto eur</td>
-                    <td>${cart.totalGrossPrice} brutto eur</td>
+                    <td><fmt:formatNumber type="number"
+                                          minFractionDigits="2" maxFractionDigits="2"
+                                          value="${cart.totalNettoPrice}"/></td>
+                    <td><fmt:formatNumber type="number"
+                                          minFractionDigits="2" maxFractionDigits="2"
+                                          value="${cart.totalGrossPrice}"/></td>
                 </tr>
                 </tfoot>
             </table>

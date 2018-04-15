@@ -58,7 +58,7 @@
                 <c:forEach items="${userOrders}" var="o" varStatus="lp">
                     <tr>
                         <th scope="row">${lp.index+1}</th>
-                        <td>${o.orderHistory.confirmDate}</td>
+                        <td>${o.orderHistorySet.confirmDate}</td>
                         <td>${o.totalNetto}</td>
                         <td>${o.totalGross}</td>
                         <td><a href="/order.jsp?orderId=${order.id}">Details</a></td>

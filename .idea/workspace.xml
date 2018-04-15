@@ -6,20 +6,14 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c86f16b-3ece-4eeb-84f7-f3a2663167b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebContent/indexxx.jsp" />
+    <list default="true" id="6c86f16b-3ece-4eeb-84f7-f3a2663167b1" name="Default" comment="JSP implementation">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/hibernate/shop/order/OrderStatus.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/cart.jsp" afterPath="$PROJECT_DIR$/WebContent/cart.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/head.jsp" afterPath="$PROJECT_DIR$/WebContent/head.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/index.jsp" afterPath="$PROJECT_DIR$/WebContent/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/order.jsp" afterPath="$PROJECT_DIR$/WebContent/order.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/orderHistory.jsp" afterPath="$PROJECT_DIR$/WebContent/orderHistory.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/product.jsp" afterPath="$PROJECT_DIR$/WebContent/product.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate/App.java" afterPath="$PROJECT_DIR$/src/hibernate/App.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate/shop/order/Order.java" afterPath="$PROJECT_DIR$/src/hibernate/shop/order/Order.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate/shop/order/OrderRepository.java" afterPath="$PROJECT_DIR$/src/hibernate/shop/order/OrderRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate/shop/order/OrderHistory.java" afterPath="$PROJECT_DIR$/src/hibernate/shop/order/OrderHistory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate/shop/servlets/CreateOrderServlet.java" afterPath="$PROJECT_DIR$/src/hibernate/shop/servlets/CreateOrderServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate/shop/user/User.java" afterPath="$PROJECT_DIR$/src/hibernate/shop/user/User.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -92,11 +86,51 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="cart.jsp" pinned="false" current-in-tab="true">
+          <file leaf-file-name="cart.jsp" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/WebContent/cart.jsp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="357">
-                  <caret line="66" column="35" lean-forward="true" selection-start-line="66" selection-start-column="35" selection-end-line="66" selection-end-column="35" />
+                <state relative-caret-position="493">
+                  <caret line="95" column="24" lean-forward="true" selection-start-line="95" selection-start-column="24" selection-end-line="95" selection-end-column="24" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="CreateOrderServlet.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/hibernate/shop/servlets/CreateOrderServlet.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="446">
+                  <caret line="43" column="25" lean-forward="false" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Order.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/hibernate/shop/order/Order.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="406">
+                  <caret line="37" column="60" lean-forward="false" selection-start-line="37" selection-start-column="60" selection-end-line="37" selection-end-column="60" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="OrderHistory.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/hibernate/shop/order/OrderHistory.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="272">
+                  <caret line="23" column="17" lean-forward="false" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="OrderStatus.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/hibernate/shop/order/OrderStatus.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="51">
+                  <caret line="3" column="68" lean-forward="false" selection-start-line="3" selection-start-column="68" selection-end-line="3" selection-end-column="68" />
                   <folding />
                 </state>
               </provider>
@@ -119,8 +153,8 @@
           <file leaf-file-name="OrderRepository.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/hibernate/shop/order/OrderRepository.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="119">
-                  <caret line="22" column="33" lean-forward="true" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+                <state relative-caret-position="476">
+                  <caret line="34" column="13" lean-forward="true" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
                   <folding />
                 </state>
               </provider>
@@ -160,8 +194,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/hibernate/shop/product/ProductRepository.java" />
-        <option value="$PROJECT_DIR$/src/hibernate/shop/OrderComplaintRepository.java" />
         <option value="$PROJECT_DIR$/src/hibernate/shop/ProductType.java" />
         <option value="$PROJECT_DIR$/src/hibernate/shop/product/ProductType.java" />
         <option value="$PROJECT_DIR$/src/hibernate/shop/OrderRepository.java" />
@@ -199,9 +231,7 @@
         <option value="$PROJECT_DIR$/WebContent/orderMessage.jsp" />
         <option value="$PROJECT_DIR$/WebContent/page.jsp" />
         <option value="$PROJECT_DIR$/src/hibernate/shop/product/Product.java" />
-        <option value="$PROJECT_DIR$/src/hibernate/shop/order/Order.java" />
         <option value="$PROJECT_DIR$/src/hibernate/shop/user/User.java" />
-        <option value="$PROJECT_DIR$/src/hibernate/shop/servlets/CreateOrderServlet.java" />
         <option value="$PROJECT_DIR$/src/hibernate/App.java" />
         <option value="$PROJECT_DIR$/WebContent/order.jsp" />
         <option value="$PROJECT_DIR$/WebContent/orderHistory.jsp" />
@@ -211,6 +241,10 @@
         <option value="$PROJECT_DIR$/WebContent/head.jsp" />
         <option value="$PROJECT_DIR$/WebContent/index.jsp" />
         <option value="$PROJECT_DIR$/WebContent/cart.jsp" />
+        <option value="$PROJECT_DIR$/src/hibernate/shop/order/OrderStatus.java" />
+        <option value="$PROJECT_DIR$/src/hibernate/shop/order/OrderHistory.java" />
+        <option value="$PROJECT_DIR$/src/hibernate/shop/servlets/CreateOrderServlet.java" />
+        <option value="$PROJECT_DIR$/src/hibernate/shop/order/Order.java" />
       </list>
     </option>
   </component>
@@ -331,6 +365,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="hibernate" type="462c0819:PsiDirectoryNode" />
               <item name="shop" type="462c0819:PsiDirectoryNode" />
+              <item name="complaint" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ogloszenia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java5pozHibernate" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="hibernate" type="462c0819:PsiDirectoryNode" />
+              <item name="shop" type="462c0819:PsiDirectoryNode" />
               <item name="order" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -396,6 +438,9 @@
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\chris\IdeaProjects\java5pozHibernate\WebContent" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="hibernate.shop.order" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="hibernate.shop.cart" />
@@ -865,14 +910,7 @@
       <workItem from="1523377123072" duration="5756000" />
       <workItem from="1523690336935" duration="10805000" />
       <workItem from="1523704134398" duration="9045000" />
-      <workItem from="1523776131047" duration="10444000" />
-    </task>
-    <task id="LOCAL-00005" summary="ProductRepository - saves product to DB">
-      <created>1520678694189</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1520678694189</updated>
+      <workItem from="1523776131047" duration="13345000" />
     </task>
     <task id="LOCAL-00006" summary="ProductRepository - returns data from DB by id">
       <created>1520679749371</created>
@@ -1210,11 +1248,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523713556288</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="JSP implementation">
+      <created>1523786750257</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1523786750257</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66770000" />
+    <option name="totallyTimeSpent" value="69671000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1353,22 +1398,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="54" lean-forward="false" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hibernate/shop/servlets/RegisterServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -1690,22 +1719,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hibernate/shop/order/Order.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="25" column="26" lean-forward="true" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hibernate/shop/servlets/CreateOrderServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="36" column="55" lean-forward="false" selection-start-line="36" selection-start-column="55" selection-end-line="36" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hibernate/App.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-16">
@@ -1734,14 +1747,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="130" column="14" lean-forward="true" selection-start-line="130" selection-start-column="14" selection-end-line="130" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hibernate/shop/order/OrderRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="22" column="33" lean-forward="true" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -1778,10 +1783,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/hibernate/shop/order/OrderRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="34" column="13" lean-forward="true" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/WebContent/cart.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="66" column="35" lean-forward="true" selection-start-line="66" selection-start-column="35" selection-end-line="66" selection-end-column="35" />
+        <state relative-caret-position="493">
+          <caret line="95" column="24" lean-forward="true" selection-start-line="95" selection-start-column="24" selection-end-line="95" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hibernate/shop/order/OrderStatus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="68" lean-forward="false" selection-start-line="3" selection-start-column="68" selection-end-line="3" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hibernate/shop/servlets/CreateOrderServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="43" column="25" lean-forward="false" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hibernate/shop/order/OrderHistory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="23" column="17" lean-forward="false" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hibernate/shop/order/Order.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="37" column="60" lean-forward="false" selection-start-line="37" selection-start-column="60" selection-end-line="37" selection-end-column="60" />
           <folding />
         </state>
       </provider>
