@@ -43,8 +43,11 @@
 
   </head>
 <%
-  Optional<Product> product= ProductRepository.findOneById(ProjectHelper.parseStringToLong(request.getParameter("productId")));
-  pageContext.setAttribute("product", product);
+  Optional<Product> product= ProductRepository.findOneById(
+          ProjectHelper.parseStringToLong(request.getParameter("productId")));
+  if(product.isPresent()){
+      pageContext.setAttribute("product", product.get());
+  }
 %>
   <body>
 
@@ -65,15 +68,14 @@
         </div>
 
         <div class="col-md-4">
-          <h3 class="my-3">Project Description</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
-          <h3 class="my-3">Project Details</h3>
-          <ul>
-            <li>Lorem Ipsum</li>
-            <li>Dolor Sit Amet</li>
-            <li>Consectetur</li>
-            <li>Adipiscing Elit</li>
-          </ul>
+          <h3 class="my-3">${product.price.grossPrice}</h3>
+          <h4 class="my-3">${product.price.nettoPrice}</h4>
+          <p>${product.description}</p>
+          <form action="/addToCart" method="get">
+            <input name="productId" type="hidden" value="${product.id}">
+            <input name="amount" type="text" value="1">
+            <button type="submit" class="btn-primary btn">Dodaj do koszyka</button>
+          </form>
         </div>
 
       </div>

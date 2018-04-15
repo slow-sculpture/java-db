@@ -1,3 +1,4 @@
+/*
 package hibernate;
 
 
@@ -170,3 +171,4 @@ public class App {
 
     }
 }
+*/

@@ -1,4 +1,8 @@
+<%@ page import="hibernate.shop.order.OrderRepository" %>
+<%@ page import="hibernate.shop.order.Order" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,66 +25,64 @@
 
 <body>
 
-    <!-- Navigation -->
-    <%@ include file="head.jsp"%>
+<!-- Navigation -->
+<%@ include file="head.jsp" %>
+<%
 
-    <!-- Page Content -->
-    <div class="container">
+    if (userFromCookie != null) {
+        List<Order> allByEmail = OrderRepository.findAllById(userFromCookie.getId(), 0);
+        pageContext.setAttribute("userOrders", allByEmail);
+    }
+%>
+<!-- Page Content -->
+<div class="container">
 
-        <div class="row">
+    <div class="row">
 
-            <%@ include file="leftMenu.jsp"%>
-            <!-- /.col-lg-3 -->
+        <%@ include file="leftMenu.jsp" %>
+        <!-- /.col-lg-3 -->
 
-            <div class="col-lg-9">
+        <div class="col-lg-9">
 
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">Data</th>
-                            <th scope="col">Kwota netto</th>
-                            <th scope="col">Kwota brutto</th>
-                            <th scope="col">Guziki</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <!-- /.card -->
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Lp</th>
+                    <th scope="col">Data zamowienia</th>
+                    <th scope="col">Kwota netto</th>
+                    <th scope="col">Kwota brutto</th>
+                    <th scope="col">Guziki</th>
+                </tr>
+                </thead>
+                <tbody>
+                <c:forEach items="${userOrders}" var="o" varStatus="lp">
+                    <tr>
+                        <th scope="row">${lp.index+1}</th>
+                        <td>${o.orderHistory.confirmDate}</td>
+                        <td>${o.totalNetto}</td>
+                        <td>${o.totalGross}</td>
+                        <td><a href="/order.jsp?orderId=${order.id}">Details</a></td>
+                    </tr>
+                </c:forEach>
+                </tbody>
+            </table>
+            <!-- /.card -->
 
-
-            </div>
-            <!-- /.col-lg-9 -->
 
         </div>
+        <!-- /.col-lg-9 -->
 
     </div>
-    <!-- /.container -->
 
-    <!-- Footer -->
-    <%@ include file="foot.jsp"%>
+</div>
+<!-- /.container -->
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Footer -->
+<%@ include file="foot.jsp" %>
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

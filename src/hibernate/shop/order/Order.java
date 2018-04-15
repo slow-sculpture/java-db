@@ -2,6 +2,7 @@ package hibernate.shop.order;
 
 
 import hibernate.shop.complaint.OrderComplaint;
+import hibernate.shop.user.User;
 import lombok.*;
 
 import javax.persistence.*;
@@ -10,31 +11,34 @@ import java.math.BigDecimal;
 import java.util.Set;
 
 @Entity
-@Table (name="orders")
+@Table(name = "orders")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(exclude = {"orderDetailSet", "orderComplaintSet"})
-public class Order implements Serializable{
+public class Order implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     BigDecimal totalNetto;
     BigDecimal totalGross;
-    String userEmail;
+
+    @ManyToOne
+    @JoinColumn
+    User user;
 
 
-    @OneToMany (mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.LAZY)//EAGER - lazy jest domyslnie
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.LAZY)//EAGER - lazy jest domyslnie
             //jedno zamowienie moze miec wiecej pozycji
             // wlascicielem realacji bedzie order detail
-    Set<OrderDetail> orderDetailSet;
+            Set<OrderDetail> orderDetailSet;
 
-    @OneToOne (mappedBy = "order")
+    @OneToOne(mappedBy = "order")
     OrderHistory orderHistory;
 
-    @ManyToMany (cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     //join table do laczenia przez tabele dodatkowa
     @JoinTable(
             name = "tabela_order_complaint_history",
@@ -46,12 +50,12 @@ public class Order implements Serializable{
     )
     Set<OrderComplaint> orderComplaintSet;
 
-    public Order(BigDecimal totalGross, String userEmail) {
+    public Order(BigDecimal totalGross, User user) {
         this.totalGross = totalGross;
-        this.userEmail = userEmail;
+        this.user = user;
     }
 
-    public void addOrderDetail(OrderDetail orderDetail){
+    public void addOrderDetail(OrderDetail orderDetail) {
         orderDetail.setOrder(this);
         orderDetailSet.add(orderDetail);
     }

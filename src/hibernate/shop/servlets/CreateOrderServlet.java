@@ -35,8 +35,7 @@ public class CreateOrderServlet extends HttpServlet{
         Order order = new Order();
         order.setTotalGross(cart.getTotalGrossPrice());
         order.setTotalNetto(cart.getTotalNettoPrice());
-        order.setUserEmail(cart.getUser().getEmail());
-
+        order.setUser(cart.getUser());
         order.setOrderDetailSet(new HashSet<>());
         for(CartDetail cd :cart.getCartDetailSet()){
             OrderDetail od = new OrderDetail();

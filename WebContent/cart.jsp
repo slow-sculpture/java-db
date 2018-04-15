@@ -1,4 +1,8 @@
+<%@ page import="java.util.Optional" %>
+<%@ page import="hibernate.shop.cart.Cart" %>
+<%@ page import="hibernate.shop.cart.CartRepository" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,118 +26,116 @@
 
 <body>
 
-    <!-- Navigation -->
-    <%@ include file="head.jsp"%>
+<!-- Navigation -->
+<%@ include file="head.jsp" %>
+<%
+    if (userFromCookie != null) {
+        Optional<Cart> byUserId = CartRepository.findByUserId(userFromCookie.getId());
+        if (byUserId.isPresent()) {
+            pageContext.setAttribute("cart", byUserId.get());
+        }
+    }
+%>
+<!-- Page Content -->
+<div class="container">
 
-    <!-- Page Content -->
-    <div class="container">
+    <div class="row">
 
-        <div class="row">
+        <%@ include file="leftMenu.jsp" %>
+        <!-- /.col-lg-3 -->
 
-            <%@ include file="leftMenu.jsp"%>
-            <!-- /.col-lg-3 -->
-
-            <div class="col-lg-9">
-                <h2>Koszyk</h2>
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">Nazwa produktu</th>
-                            <th scope="col">Ilość</th>
-                            <th scope="col">Kwota netto</th>
-                            <th scope="col">Kwota brutto</th>
-                            <th scope="col">Razem</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">Zabawka</th>
-                            <td>
-                                <input name="amount_1" />
-                                <span class="glyphicon glyphicon-plus" aria-hidden="true">
+        <div class="col-lg-9">
+            <h2>Koszyk</h2>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Nazwa produktu</th>
+                    <th scope="col">Ilość</th>
+                    <th scope="col">Kwota netto</th>
+                    <th scope="col">Kwota brutto</th>
+                    <th scope="col">Razem</th>
+                </tr>
+                </thead>
+                <tbody>
+                <c:forEach items="${cart.cartDetailSet}" var="cd" varStatus="it">
+                    <tr>
+                        <th scope="row">${cd.product.name}</th>
+                        <td>
+                            <input name="amount_1" value="${cd.amount}"/>
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true">
                                     +
                                     -
                                 </span>
 
-                            </td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>500</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Auto</th>
-                            <td><input name="amount_1"></td>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Banan</th>
-                            <td><input name="amount_1"></td>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                            <td>100</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td></td>
-                            <td><b>Suma:</b></td>
-                            <td>2000zł</td>
-                            <td>2200zł</td>
-                        </tr>
-                    </tfoot>
-                </table>
-                <!-- /.card -->
+                        </td>
+                        <td>${cd.price.nettoPrice}</td>
+                        <td>${cd.price.grossPrice}</td>
+                        <fmt:parseNumber var="totalNettoPrice" type="number"
+                                         value="${cd.price.nettoPrice.multiply(cd.amount)}"/>
+                        <fmt:parseNumber var="totalNettoPrice" type="number"
+                                         value="${cd.price.grossPrice.multiply(cd.amount)}"/>
+                        <td>${cd.price.nettoPrice.multiply(cd.amount)}</td>
+                        <td>${cd.price.grossPrice.multiply(cd.amount)}</td>
+                    </tr>
+                </c:forEach>
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <h5>Metoda dostawy:</h5>
-                        <select class="form-control">
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td></td>
+                    <td><b>Suma:</b></td>
+                    <td>${cart.totalNettoPrice} netto eur</td>
+                    <td>${cart.totalGrossPrice} brutto eur</td>
+                </tr>
+                </tfoot>
+            </table>
+            <!-- /.card -->
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Metoda dostawy:</h5>
+                    <select class="form-control">
                         <option>Kurier</option>
                         <option>Odbiór osobisty</option>
 
                     </select>
-                    </div>
-                    <div class="col-md-6">
-                        <h5>Adres dostawy</h5>
-                        <div class="col-md-12">
-                            <label>Miejscowość</label>
-                            <input type="text" class="form-control" name="city" />
-                        </div>
-                        <div class="col-md-12">
-                            <label>Kod pocztowy</label>
-                            <input type="zipCode" class="form-control" name="city" />
-                        </div>
-                        <div class="col-md-12">
-                            <label>Ulica</label>
-                            <input type="street" class="form-control" name="city" />
-                        </div>
-
-                    </div>
                 </div>
+                <div class="col-md-6">
+                    <h5>Adres dostawy</h5>
+                    <div class="col-md-12">
+                        <label>Miejscowość</label>
+                        <input type="text" class="form-control" name="city"/>
+                    </div>
+                    <div class="col-md-12">
+                        <label>Kod pocztowy</label>
+                        <input type="text" class="form-control" name="zip"/>
+                    </div>
+                    <div class="col-md-12">
+                        <label>Ulica</label>
+                        <input type="text" class="form-control" name="street"/>
+                    </div>
 
-                <div>
-                    <button class="btn btn-success">Kup i zapłać</button>
                 </div>
-
             </div>
-            <!-- /.col-lg-9 -->
+
+            <div>
+                <a href="/createOrder" class="btn btn-success">Kup i zapłać</a>
+            </div>
 
         </div>
+        <!-- /.col-lg-9 -->
 
     </div>
-    <!-- /.container -->
 
-    <!-- Footer -->
-    <%@ include file="foot.jsp"%>
+</div>
+<!-- /.container -->
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Footer -->
+<%@ include file="foot.jsp" %>
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
