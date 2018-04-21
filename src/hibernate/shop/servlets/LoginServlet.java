@@ -24,5 +24,6 @@ public class LoginServlet extends HttpServlet{
         if(byEmailAndPassword.isPresent()){
             resp.addCookie((new Cookie("email", byEmailAndPassword.get().getEmail())));
         }
+        req.getRequestDispatcher("/index.jsp").forward(req,resp);
     }
 }

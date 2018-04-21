@@ -1,5 +1,5 @@
-<%@ page import="hibernate.shop.order.OrderRepository" %>
 <%@ page import="hibernate.shop.order.Order" %>
+<%@ page import="hibernate.shop.order.OrderRepository" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -31,8 +31,9 @@
 
     if (userFromCookie != null) {
         List<Order> allByEmail = OrderRepository.findAllById(userFromCookie.getId(), 0);
-        pageContext.setAttribute("userOrders", allByEmail);
-    }
+
+            pageContext.setAttribute("userOrders", allByEmail);
+        }
 %>
 <!-- Page Content -->
 <div class="container">
@@ -47,21 +48,23 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th scope="col">Lp</th>
-                    <th scope="col">Data zamowienia</th>
-                    <th scope="col">Kwota netto</th>
-                    <th scope="col">Kwota brutto</th>
-                    <th scope="col">Guziki</th>
+                    <th scope="col"></th>
+                    <th scope="col">Order date</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Netto price</th>
+                    <th scope="col">Gross price</th>
+                    <th scope="col"></th>
                 </tr>
                 </thead>
                 <tbody>
                 <c:forEach items="${userOrders}" var="o" varStatus="lp">
                     <tr>
                         <th scope="row">${lp.index+1}</th>
-                        <td>${o.orderHistorySet.confirmDate}</td>
+                        <td>${o.currentOrderHistory.statusDate}</td>
+                        <td>${o.currentOrderHistory.orderStatus}</td>
                         <td>${o.totalNetto}</td>
                         <td>${o.totalGross}</td>
-                        <td><a href="/order.jsp?orderId=${order.id}">Details</a></td>
+                        <td><a href="/order.jsp?orderId=${o.id}">Details</a></td>
                     </tr>
                 </c:forEach>
                 </tbody>

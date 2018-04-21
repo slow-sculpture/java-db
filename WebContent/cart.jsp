@@ -45,15 +45,15 @@
         <!-- /.col-lg-3 -->
 
         <div class="col-lg-9">
-            <h2>Koszyk</h2>
+            <h2>Cart</h2>
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th scope="col">Nazwa produktu</th>
-                    <th scope="col">Ilość</th>
-                    <th scope="col">Kwota netto</th>
-                    <th scope="col">Kwota brutto</th>
-                    <th scope="col">Razem</th>
+                    <th scope="col">Product name</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Netto price</th>
+                    <th scope="col">Gross price</th>
+                    <th scope="col">Summary price</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -99,25 +99,26 @@
 
             <div class="row">
                 <div class="col-md-6">
-                    <h5>Metoda dostawy:</h5>
+                    <h5>Shipping:</h5>
                     <select class="form-control">
-                        <option>Kurier</option>
-                        <option>Odbiór osobisty</option>
+                        <option>DPD</option>
+                        <option>Pocztex</option>
+                        <option>InPost</option>
 
                     </select>
                 </div>
                 <div class="col-md-6">
                     <h5>Adres dostawy</h5>
                     <div class="col-md-12">
-                        <label>Miejscowość</label>
+                        <label>city</label>
                         <input type="text" class="form-control" name="city"/>
                     </div>
                     <div class="col-md-12">
-                        <label>Kod pocztowy</label>
+                        <label>zip code</label>
                         <input type="text" class="form-control" name="zip"/>
                     </div>
                     <div class="col-md-12">
-                        <label>Ulica</label>
+                        <label>street</label>
                         <input type="text" class="form-control" name="street"/>
                     </div>
 
@@ -125,7 +126,7 @@
             </div>
 
             <div>
-                <a href="/createOrder" class="btn btn-success">Kup i zapłać</a>
+                <a href="/createOrder" class="btn btn-success">Buy & pay</a>
             </div>
 
         </div>

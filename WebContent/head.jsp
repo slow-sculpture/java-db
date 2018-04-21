@@ -14,6 +14,14 @@
     if (userFromCookie != null) {
         pageContext.setAttribute("user", userFromCookie);
     }
+
+    Object i = application.getAttribute("i");
+    if(i==null){
+        application.setAttribute("i",1);
+    } else {
+        application.setAttribute("i", (int)i+1);
+    }
+    pageContext.setAttribute("i", application.getAttribute("i"));
 %>
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">

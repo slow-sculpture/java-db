@@ -64,4 +64,17 @@ public class Order implements Serializable {
         orderHistory.setOrder(this);
         this.orderHistorySet.add(orderHistory);
     }
+    public OrderHistory getCurrentOrderHistory(){
+        return this.getOrderHistorySet().stream()
+                .sorted((a, b) -> a.getId().compareTo(b.getId())).findFirst()
+                .orElse(new OrderHistory());
+    }
+
+    public Set<OrderDetail> getOrderDetailSet() {
+        return orderDetailSet;
+    }
+
+    public void setOrderDetailSet(Set<OrderDetail> orderDetailSet) {
+        this.orderDetailSet = orderDetailSet;
+    }
 }

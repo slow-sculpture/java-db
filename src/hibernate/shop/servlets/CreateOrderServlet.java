@@ -28,6 +28,7 @@ public class CreateOrderServlet extends HttpServlet {
             Optional<Cart> byUserId = CartRepository.findByUserId(userFromCookie.getId());
 
             byUserId.ifPresent(x -> createAndSaveOrder(x));
+            req.getRequestDispatcher("/orderHistory.jsp").forward(req,resp);
         }
     }
 

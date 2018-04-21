@@ -22,18 +22,18 @@ public class RegisterServlet extends HttpServlet {
 
         boolean isValid=true;
         if(firstName.isEmpty() || lastName.isEmpty() || email.isEmpty() || password.isEmpty() || password2.isEmpty()){
-            System.out.println("Prosze uzupelnic formularz");
+            System.out.println("Pleas fill in all fields");
             isValid=false;
         }
         if(!password.equals(password2)){
-            System.out.println("Hasla sa rozne");
+            System.out.println("Passwords mismatch");
             isValid=false;
         }
 
         Optional<User> byEmail = UserRepository.findByEmail(email);
         if(byEmail.isPresent()){
             isValid=false;
-            System.out.println("Uzytkownik z takim emailem juz istnieje");
+            System.out.println("User with this email address already exists");
         }
 
         if(isValid) {
@@ -44,6 +44,7 @@ public class RegisterServlet extends HttpServlet {
             user.setLastName(lastName);
             UserRepository.save(user);
         }
+        request.getRequestDispatcher("/index.jsp").forward(request,response);
     }
 
 

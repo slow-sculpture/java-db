@@ -45,5 +45,6 @@ public class DecreaseProductAmountServlet extends HttpServlet {
                 }
             }
         }
+        req.getRequestDispatcher("/cart.jsp").forward(req,resp);
     }
 }

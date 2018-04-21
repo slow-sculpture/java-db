@@ -48,19 +48,19 @@
 
         <div class="col-lg-9">
             <div class="card-body">
-                <h3 class="card-title">Zamówienie numer ${order.id}</h3>
-                <h4>kwota brutto: ${order.totalGross}</h4>
-                <h5>kwota netto: ${order.totalNetto}</h5>
+                <h3 class="card-title">Order No ${order.id}</h3>
+                <h4>Gross price: ${order.totalGross}</h4>
+                <h5>Netto price: ${order.totalNetto}</h5>
             </div>
 
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th scope="col">Lp</th>
-                    <th scope="col">Nazwa produktu</th>
-                    <th scope="col">Kwota netto</th>
-                    <th scope="col">Kwota brutto</th>
-                    <th scope="col">Ilosc</th>
+                    <th scope="col"></th>
+                    <th scope="col">Product name</th>
+                    <th scope="col">Netto price</th>
+                    <th scope="col">Gross price</th>
+                    <th scope="col">Amount</th>
                 </tr>
                 </thead>
                 <tbody>

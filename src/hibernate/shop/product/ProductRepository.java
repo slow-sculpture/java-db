@@ -107,7 +107,7 @@ public class ProductRepository {
         Session session = null;
         try {
             session = HibernateUtil.openSession();
-            String jpql = "SELECT p FROM product p";
+            String jpql = "SELECT p FROM Product p";
             Query query = session.createQuery(jpql);
             return query.getResultList();
 
@@ -134,7 +134,7 @@ public class ProductRepository {
         Session session = null;
         try {
             session = HibernateUtil.openSession();
-            String jpql = "SELECT p FROM product p WHERE p.productType= :productType";
+            String jpql = "SELECT p FROM Product p WHERE p.productType= :productType";
             Query query = session.createQuery(jpql);
             query.setParameter("productType", productType);
             return query.getResultList();
@@ -162,7 +162,7 @@ public class ProductRepository {
         Session session = null;
         try {
             session = HibernateUtil.openSession();
-            String jpql = "SELECT count(p.id) FROM product p WHERE p.productType= :productType";
+            String jpql = "SELECT count(p.id) FROM Product p WHERE p.productType= :productType";
             Query query = session.createQuery(jpql);
             query.setParameter("productType", productType);
             return (Long) query.getSingleResult();
@@ -189,7 +189,7 @@ public class ProductRepository {
         Session session = null;
         try {
             session = HibernateUtil.openSession();
-            String jpql = "SELECT p FROM product p WHERE p.price.grossPrice < :price" ;
+            String jpql = "SELECT p FROM Product p WHERE p.price.grossPrice < :price" ;
             Query query = session.createQuery(jpql);
             query.setParameter("price", priceGross);
             return query.getResultList();
@@ -216,7 +216,7 @@ public class ProductRepository {
         Session session = null;
         try {
             session = HibernateUtil.openSession();
-            String jpql = "SELECT p FROM product p WHERE UPPER(p.name) like :name";
+            String jpql = "SELECT p FROM Product p WHERE UPPER(p.name) like :name";
             Query query = session.createQuery(jpql);
             query.setParameter("name","%"+ name.toUpperCase()+"%");
             return query.getResultList();
@@ -303,7 +303,7 @@ public class ProductRepository {
         Session session = null;
         try {
             session = HibernateUtil.openSession();
-            String jpql = "SELECT p FROM product p WHERE (p.productType = :toy OR " +
+            String jpql = "SELECT p FROM Product p WHERE (p.productType = :toy OR " +
                     "p.productType = :car) AND p.price.grossPrice < :price";
             Query query = session.createQuery(jpql);
             query.setParameter("price", priceGross);
@@ -355,4 +355,39 @@ public class ProductRepository {
         }
     }
 
+    public static  List<ProductRating> findAllByProductId(Long id){
+        Session session = null;
+        try{
+            session=HibernateUtil.openSession();
+            String jpql = "SELECT p FROM ProductRating p WHERE product.id=:productRating";
+            Query query = session.createQuery(jpql);
+            query.setParameter("productRating", id);
+            return query.getResultList();
+        }catch (Exception ex){
+            ex.printStackTrace();
+            return Collections.emptyList();
+        } finally {
+            if(session != null && session.isOpen()){
+                session.close();
+            }
+        }
+    }
+
+    public static  Double findAllByProductIdAvg(Long id){
+        Session session = null;
+        try{
+            session=HibernateUtil.openSession();
+            String jpql = "SELECT avg(p.rating) FROM ProductRating p WHERE product.id=:productRating";
+            Query query = session.createQuery(jpql);
+            query.setParameter("productRating", id);
+            return (Double)query.getSingleResult();
+        }catch (Exception ex){
+            ex.printStackTrace();
+            return 0d;
+        } finally {
+            if(session != null && session.isOpen()){
+                session.close();
+            }
+        }
+    }
 }

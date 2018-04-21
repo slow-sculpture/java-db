@@ -20,7 +20,9 @@ public class LogoutServlet extends HttpServlet {
                 resp.addCookie(cookie);
             }
         }
-        resp.getWriter().write("Wylogowano pomyslnie");
+        //resp.getWriter().write("Log out successful");
+
+        req.getRequestDispatcher("/index.jsp?isSuccessLogout=true").forward(req,resp);
 
     }
 }

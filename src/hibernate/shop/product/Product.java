@@ -2,7 +2,9 @@ package hibernate.shop.product;
 
 import hibernate.shop.cart.CartDetail;
 import hibernate.shop.order.OrderDetail;
+import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -14,6 +16,8 @@ import javax.persistence.*;
 @EqualsAndHashCode(exclude = {"orderDetailSet", "productRatingSet"})
 //jakbysmy chcieli zmienic nazwe tabeli
 //@Table("product")
+
+
 public class Product implements Serializable {
 
     @Id
@@ -24,6 +28,8 @@ public class Product implements Serializable {
     //@Column(name="data_dodania", length = 20;)
     private LocalDate date;
     private String description;
+    @Lob
+    private byte[] image;
     @Enumerated
     private ProductType productType;
 
@@ -88,5 +94,29 @@ public class Product implements Serializable {
 
     public void setPrice(Price price) {
         this.price = price;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Set<OrderDetail> getOrderDetailSet() {
+        return orderDetailSet;
+    }
+
+    public void setOrderDetailSet(Set<OrderDetail> orderDetailSet) {
+        this.orderDetailSet = orderDetailSet;
+    }
+
+    public Set<ProductRating> getProductRatingSet() {
+        return productRatingSet;
+    }
+
+    public void setProductRatingSet(Set<ProductRating> productRatingSet) {
+        this.productRatingSet = productRatingSet;
     }
 }

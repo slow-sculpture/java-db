@@ -30,6 +30,6 @@ public class User implements Serializable {
     Set<ProductRating> productRatingSet;
 
     @OneToMany(mappedBy = "user")
-    Set<Order> order;
+    Set<Order> orderSet;
 
 }

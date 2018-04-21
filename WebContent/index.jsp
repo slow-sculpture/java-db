@@ -1,4 +1,3 @@
-
 <%@ page import="java.util.List" %>
 <%@ page import="hibernate.shop.product.Product" %>
 <%@ page import="hibernate.shop.product.ProductRepository" %>
@@ -6,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,97 +20,105 @@
     <!-- Custom styles for this template -->
     <link href="css/shop-homepage.css" rel="stylesheet">
 
-  </head>
+</head>
 <%
 
-  List<Product> allProduct = ProductRepository.findAll();
-  pageContext.setAttribute("allProduct", allProduct);
+    List<Product> allProduct = ProductRepository.findAll();
+    pageContext.setAttribute("allProduct", allProduct);
 
+    if (request.getParameter("isSuccessLogout")!=null&&request.getParameter("isSuccessLogout").equals(true)) {
+        pageContext.setAttribute("info", "You are log out!");
+    }
 %>
-  <body>
+<body>
 
-    <%@include file="head.jsp"%>
+<%@include file="head.jsp" %>
 
-    <!-- Page Content -->
-    <div class="container">
+<c:if test="${info!=null&&info.length()>0}">
+    <div class="alert alert-danger" role="alert">
+            ${info}
+    </div>
+</c:if>
+<!-- Page Content -->
+<div class="container">
 
-      <div class="row">
+    <div class="row">
 
-       <%@include file="leftMenu.jsp"%>
+        <%@include file="leftMenu.jsp" %>
         <!-- /.col-lg-3 -->
 
         <div class="col-lg-9">
 
-          <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner" role="listbox">
-              <div class="carousel-item active">
-                <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide">
-              </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-
-          <div class="row">
-
-        <c:forEach items="${allProduct}" var="product">
-
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="/product.jsp?productId=${product.id}">${product.name}</a>
-                  </h4>
-                  <h5>${product.price.grossPrice} zł</h5>
-                  <h6>${product.price.nettoPrice} zł</h6>
-
-                  <p class="card-text">${product.description}</p>
+            <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide">
+                    </div>
                 </div>
-                <div class="card-footer">
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                </div>
-              </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
 
-        </c:forEach>
+            <div class="row">
 
-          </div>
-          <!-- /.row -->
+                <c:forEach items="${allProduct}" var="product">
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100">
+                            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <a href="/product.jsp?productId=${product.id}">${product.name}</a>
+                                </h4>
+                                <h5>${product.price.grossPrice} zł</h5>
+                                <h6>${product.price.nettoPrice} zł</h6>
+
+                                <p class="card-text">${product.description}</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                            </div>
+                        </div>
+                    </div>
+
+                </c:forEach>
+
+            </div>
+            <!-- /.row -->
 
         </div>
         <!-- /.col-lg-9 -->
 
-      </div>
-      <!-- /.row -->
-
     </div>
-    <!-- /.container -->
+    <!-- /.row -->
 
-    <!-- Footer -->
-   <%@include file="foot.jsp"%>
+</div>
+<!-- /.container -->
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Footer -->
+<%@include file="foot.jsp" %>
 
-  </body>
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
 
 </html>

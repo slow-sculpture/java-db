@@ -2,6 +2,9 @@
 <%@ page import="hibernate.shop.product.Product" %>
 <%@ page import="hibernate.shop.product.ProductRepository" %>
 <%@ page import="hibernate.shop.utils.ProjectHelper" %>
+<%@ page import="java.util.List" %>
+<%@ page import="hibernate.shop.product.ProductRating" %>
+<%@ page import="java.math.BigDecimal" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -46,7 +49,11 @@
   Optional<Product> product= ProductRepository.findOneById(
           ProjectHelper.parseStringToLong(request.getParameter("productId")));
   if(product.isPresent()){
+    List<ProductRating> allProductRating = ProductRepository.findAllByProductId(product.get().getId());
+    Double avgProductRating = ProductRepository.findAllByProductIdAvg(product.get().getId());
       pageContext.setAttribute("product", product.get());
+      pageContext.setAttribute("allProductRating", allProductRating);
+      pageContext.setAttribute("avgProductRating", avgProductRating);
   }
 %>
   <body>
@@ -64,17 +71,17 @@
       <div class="row">
 
         <div class="col-md-8">
-          <img class="img-fluid" src="http://placehold.it/750x500" alt="">
+          <img class="img-fluid" src="/productImage/pexels-photo-100582.jpeg" alt="">
         </div>
 
         <div class="col-md-4">
           <h3 class="my-3">${product.price.grossPrice}</h3>
           <h4 class="my-3">${product.price.nettoPrice}</h4>
           <p>${product.description}</p>
-          <form action="/addToCart" method="get">
+          <form action="/addProduct" method="get">
             <input name="productId" type="hidden" value="${product.id}">
-            <input name="amount" type="text" value="1">
-            <button type="submit" class="btn-primary btn">Dodaj do koszyka</button>
+            <input name="productAmount" type="text" value="1">
+            <button type="submit" class="btn-primary btn">Add to cart</button>
           </form>
         </div>
 
@@ -118,17 +125,24 @@
 
         <div>
           <form method="post" action="/addNewProductRating" >
-          <label>Opinia:</label>
+          <label>Opinion:</label>
           <textarea class="form-control" name="description" > </textarea>
           <input id="input-id" name="rating" type="text" class="rating" data-size="lg" >
           <input type="hidden" value="1" name="productId" />
-          <button type="submit" class="btn-primary btn"> Zapisz</button>
+          <button type="submit" class="btn-primary btn"> Save</button>
 
           </form>
         </div>
 
       </div>
-
+    <c:forEach items="${allProductRating}" var="productRating">
+      <div class="col-md-4">
+        <div>Opinia wystawiona: ${productRating.createDate}</div>
+        <div>Ocena: ${productRating.rating}</div>
+        <div>Komentarz: ${productRating.description}</div>
+      </div>
+    </c:forEach>
+      <div>Srednia ocen - ${avgProductRating}</div>
     </div>
     <!-- /.container -->
 

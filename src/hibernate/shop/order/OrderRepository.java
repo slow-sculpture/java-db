@@ -14,10 +14,11 @@ public class OrderRepository {
         Session session=null;
         try{
             session=HibernateUtil.openSession();
-            Optional<Order> order = Optional.ofNullable(session.find(Order.class, id));
-            if(order.isPresent()){
-                order.get().getOrderDetailSet();
-            }
+            String hql="SELECT o FROM Order o LEFT JOIN FETCH o.orderDetailSet od WHERE o.id = :id";
+            Query query = session.createQuery(hql);
+            query.setParameter("id", id);
+            Optional<Order> order = Optional.ofNullable((Order)query.getSingleResult());
+
             return order;
         }catch (Exception ex){
             ex.printStackTrace();
@@ -57,7 +58,7 @@ public class OrderRepository {
         Session session = null;
         try {
             session = HibernateUtil.openSession();
-            String jpql = "SELECT new hibernate.shop.order.order(p.totalGross, p.userEmail) FROM order p";
+            String jpql = "SELECT new hibernate.shop.order.Order(p.totalGross, p.user) FROM Order p";
             Query query = session.createQuery(jpql);
             return query.getResultList();
 
@@ -77,7 +78,7 @@ public class OrderRepository {
         Session session = null;
         try {
             session = HibernateUtil.openSession();
-            String jpql = "SELECT o FROM order o LEFT JOIN FETCH o.orderDetailSet od WHERE od.product.id = :id";
+            String jpql = "SELECT o FROM Order o LEFT JOIN FETCH o.orderDetailSet od WHERE od.product.id = :id";
             //String jpql2 = "SELECT o FROM OrderDetail od LEFT JOIN od.order o WHERE od.product.id = :id";
             Query query = session.createQuery(jpql);
             query.setParameter("id", productId);
@@ -97,7 +98,7 @@ public class OrderRepository {
         Session session = null;
         try {
             session = HibernateUtil.openSession();
-            String jpql = "SELECT o FROM order o LEFT JOIN FETCH o.orderDetailSet od";
+            String jpql = "SELECT o FROM Order o LEFT JOIN FETCH o.orderDetailSet od";
             Query query = session.createQuery(jpql);
             return query.getResultList();
 
@@ -116,7 +117,7 @@ public class OrderRepository {
         Session session = null;
         try {
             session = HibernateUtil.openSession();
-            String jpql = "SELECT o FROM order o WHERE o.user.id = :id ORDER BY o.id DESC ";
+            String jpql = "SELECT o FROM Order o WHERE o.user.id = :id ORDER BY o.id DESC ";
             Query query = session.createQuery(jpql);
             query.setParameter("id", id);
             query.setMaxResults(15);

@@ -9,6 +9,7 @@ import hibernate.shop.user.User;
 import hibernate.shop.utils.ProjectHelper;
 import hibernate.shop.utils.UserSessionHelper;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,7 +21,7 @@ import java.util.Optional;
 
 public class AddProductToCartServlet extends HttpServlet {
     @Override
-    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         PrintWriter writer = resp.getWriter();
         User user = UserSessionHelper.getUserFromCookie(req.getCookies());
 
@@ -75,6 +76,7 @@ public class AddProductToCartServlet extends HttpServlet {
                 writer.write("Prosze sie zalogowac");
             }
         }
+        req.getRequestDispatcher("/cart.jsp").forward(req,resp);
     }
 
 
